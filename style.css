@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    color: #111;
+    background: #fff;
+}
+
+/* HEADER */
+header {
+    padding: 40px;
+}
+.logo {
+    width: 180px;
+}
+
+/* INTRO */
+.intro {
+    text-align: left;
+    padding: 80px 40px;
+}
+.intro h1 {
+    font-size: 42px;
+    font-weight: 300;
+}
+.intro p {
+    font-size: 20px;
+    color: #555;
+}
+
+/* SECTIONS */
+section {
+    padding: 80px 40px;
+    border-top: 1px solid #eee;
+}
+
+.section-img {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 40px;
+}
+
+/* ABOUT */
+.about .text {
+    max-width: 700px;
+}
+
+/* SERVICES */
+.services h2 {
+    margin-bottom: 40px;
+}
+.service-list {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.service {
+    flex: 1;
+    min-width: 250px;
+}
+.service h3 {
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.service p {
+    color: #555;
+}
+
+/* CONTACT */
+.contact {
+    text-align: left;
+}
