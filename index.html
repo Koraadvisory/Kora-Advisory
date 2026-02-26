@@ -1,62 +1,145 @@
-<body style="margin:0; padding:0; font-family:Helvetica Neue, Arial, sans-serif; background:#ffffff;">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kora Advisory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-    <!-- Language Switch -->
-    <div style="position:absolute; top:20px; right:20px; font-size:14px;">
-        <span id="fr-btn" style="cursor:pointer; margin-right:10px; text-decoration:underline;">FR</span>
-        <span id="en-btn" style="cursor:pointer;">EN</span>
-    </div>
+<body>
 
-    <div style="height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:40px;">
+    <!-- HEADER -->
+    <header>
+        <img src="logo.png" class="logo" alt="Kora Advisory">
+    </header>
 
-        <img src="logo.png" alt="Kora Advisory" style="width:160px; margin-bottom:40px;">
+    <!-- HERO SECTION -->
+    <section class="intro">
+        <h1>À l’intersection de la vision organisationnelle et de l’intelligence culturelle</h1>
+      <p class="definition">
+    L’intelligence culturelle permet d’aligner la vision organisationnelle avec les dynamiques 
+    humaines, culturelles et territoriales qui façonnent un écosystème.</p>
+  
+        <p class="tagline">Transforming Systems Together</p>
+        <p class="sub">Nous consolidons la vision.</p>
+    </section>
 
-        <!-- FR CONTENT -->
-        <div id="fr-content">
-            <h1 style="font-weight:300; font-size:28px; margin-bottom:10px;">
-                Site en construction
-            </h1>
+    <!-- MANTRA -->
+    <section class="mantra">
+        <h2>Structurer. Relier. Co‑créer. Faire émerger de nouvelles opportunités.</h2>
+    </section>
 
-            <p style="font-size:18px; color:#555; max-width:500px; line-height:1.5;">
-                Structurer, co‑créer et faire émerger de nouvelles opportunités.  
-                Le site sera bientôt disponible dans sa version complète.
+    <!-- ABOUT -->
+    <section class="about">
+        <div class="text">
+            <h2>À propos</h2>
+            <p>
+                Kora Advisory accompagne les organisations, les acteurs culturels et les écosystèmes créatifs 
+                dans leur structuration, leur changement d’échelle et leur accès aux opportunités nationales 
+                et internationales.
+            </p>
+            <p>
+                Nous travaillons avec une diversité d’acteurs — des organisations internationales et programmes 
+                de développement aux institutions culturelles, écosystèmes créatifs et collectifs d’artisans. 
+                Notre approche reste la même : co‑créer des structures, des trajectoires et des conditions propices 
+                à l'émergeance d'opportunités porteuses de transformation.
             </p>
         </div>
+    </section>
 
-        <!-- EN CONTENT -->
-        <div id="en-content" style="display:none;">
-            <h1 style="font-weight:300; font-size:28px; margin-bottom:10px;">
-                Website under construction
-            </h1>
+    <!-- POSITIONNEMENT -->
+    <section class="positioning">
+        <h2>Notre positionnement</h2>
+        <p>
+            Nous accompagnons la transformation des écosystèmes économiques, culturels et créatifs dans une 
+            logique de co‑création.  
+        </p>
+        <ul>
+            <li>Structuration interne</li>
+            <li>Cartographie d’écosystèmes</li>
+            <li>Positionnement international</li>
+            <li>Développement partenarial</li>
+        </ul>
+        <p>
+            L’impact durable naît d’une collaboration structurée.
+        </p>
+    </section>
 
-            <p style="font-size:18px; color:#555; max-width:500px; line-height:1.5;">
-                We structure, connect, co‑create, and open opportunities.  
-                The full website will be available soon.
-            </p>
+    <!-- SERVICES -->
+    <section class="services">
+        <h2>Services</h2>
+
+        <div class="service-list">
+
+            <div class="service">
+                <h3>Structuration & Développement Organisationnel</h3>
+                <p>
+                    Nous accompagnons les organisations dans la clarification de leur vision, la structuration interne 
+                    et la mise en place de modèles favorisant un développement durable.
+                </p>
+            </div>
+
+            <div class="service">
+                <h3>Développement des Industries Culturelles & Créatives</h3>
+                <p>
+                    Nous co‑construisons des approches de positionnement, des modèles de financement et des cadres 
+                    d’internationalisation pour les acteurs culturels et créatifs.
+                </p>
+            </div>
+
+            <div class="service">
+                <h3>Partenariats Stratégiques & Expansion Internationale</h3>
+                <p>
+                    Nous développons des collaborations intersectorielles et internationales créatrices de valeur durable.
+                </p>
+            </div>
+
         </div>
+    </section>
 
-    </div>
+    <!-- INTERNATIONAL DIMENSION -->
+    <section class="international">
+        <h2>Une vision internationale</h2>
+        <p>
+            Kora Advisory accompagne le positionnement global, le rayonnement international et la mise en oeuvre de projets 
+            transfrontaliers.  
+        </p>
+        <p>
+            Nous concevons des cadres d’internationalisation permettant aux organisations et aux acteurs culturels 
+            de se positionner à l’échelle globale, de structurer des relations pertinentes et d'identifier des 
+            opportunités pertinentes dans des environnements internationaux.
+        </p>
+        <p>
+            Nous relions l’expertise locale aux opportunités internationales.
+        </p>
+    </section>
 
-    <!-- LANGUAGE SWITCH SCRIPT -->
-    <script>
-        const frBtn = document.getElementById('fr-btn');
-        const enBtn = document.getElementById('en-btn');
-        const frContent = document.getElementById('fr-content');
-        const enContent = document.getElementById('en-content');
+    <!-- INSIGHTS -->
+    <section class="insights">
+        <h2>Perspectives Stratégiques</h2>
+        <p>Réflexions et analyses sur :</p>
+        <ul>
+            <li>Économie créative</li>
+            <li>Investissement à impact</li>
+            <li>Connexions culturelles internationales</li>
+            <li>Modèles durables</li>
+        </ul>
+    </section>
 
-        frBtn.onclick = () => {
-            frContent.style.display = 'block';
-            enContent.style.display = 'none';
-            frBtn.style.textDecoration = 'underline';
-            enBtn.style.textDecoration = 'none';
-        };
+    <!-- MANTRA REPRISE -->
+    <section class="mantra">
+        <h2>Structurer. Relier. Co‑créer. Faire émerger de nouvelles opportunités.</h2>
+    </section>
 
-        enBtn.onclick = () => {
-            frContent.style.display = 'none';
-            enContent.style.display = 'block';
-            enBtn.style.textDecoration = 'underline';
-            frBtn.style.textDecoration = 'none';
-        };
-    </script>
+    <!-- CALL TO ACTION -->
+    <section class="contact">
+        <h2>Construisons ensemble un impact durable</h2>
+        <p>
+            Initiative culturelle, transformation organisationnel ou stratégie internationale : nous co‑créons l'essentiel.
+        </p>
+        <p>Email : contact@koraadvisory.co</p>
+    </section>
 
 </body>
-
+</html>
