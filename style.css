@@ -25,7 +25,8 @@ header {
 }
 
 .logo {
-    height: 55px; /* Taille lisible mais élégante */
+    height: 65px;
+    width: auto;
 }
 
 /* HERO */
@@ -116,5 +117,5 @@ header {
 
 .contact h2,
 .contact p {
-    color: white; /* Correction : texte visible */
+    color: white !important;
 }
