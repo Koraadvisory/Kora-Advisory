@@ -12,14 +12,12 @@ body {
     line-height: 1.6;
 }
 
-/* Titres */
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
     margin-bottom: 15px;
     color: #0A0A0A;
 }
 
-/* Sections */
 section {
     padding: 80px 12%;
     position: relative;
@@ -46,7 +44,7 @@ section {
     background-position: center;
 }
 
-/* Overlay pour lisibilité */
+/* Overlay */
 .overlay {
     position: absolute;
     inset: 0;
@@ -67,7 +65,7 @@ section {
 }
 
 /* ------------------------------
-   HERO (Bleu nuit + or)
+   HERO (A2)
 --------------------------------*/
 
 .hero {
@@ -78,7 +76,9 @@ section {
     color: white;
     position: relative;
     text-align: center;
-    background-image: url('IMAGE_HERO');
+    background-image: url('https://unsplash.com/photos/abstract-blue-light-sphere-8manzosRGPE/download?force=true');
+    background-size: cover;
+    background-position: center;
 }
 
 .hero::before {
@@ -106,19 +106,11 @@ section {
 }
 
 /* ------------------------------
-   SECTIONS CLAIRES
---------------------------------*/
-
-.about, .positioning, .services, .insights {
-    background: #FAF9F7;
-}
-
-/* ------------------------------
-   POSITIONNEMENT (texture claire)
+   POSITIONNEMENT (P1)
 --------------------------------*/
 
 .positioning {
-    background-image: url('IMAGE_TEXTURE_CLAIRE');
+    background-image: url('https://unsplash.com/photos/light-stone-texture-8manzosRGPE/download?force=true');
     background-size: cover;
     background-position: center;
 }
@@ -141,12 +133,14 @@ section {
 }
 
 /* ------------------------------
-   INTERNATIONAL (Bleu nuit + flux lumineux)
+   INTERNATIONAL (I3)
 --------------------------------*/
 
 .international {
     color: white;
-    background-image: url('IMAGE_INTERNATIONAL');
+    background-image: url('https://unsplash.com/photos/abstract-blue-globe-lights-8manzosRGPE/download?force=true');
+    background-size: cover;
+    background-position: center;
 }
 
 .international::before {
@@ -157,14 +151,16 @@ section {
 }
 
 /* ------------------------------
-   MANTRA (image abstraite forte)
+   MANTRA (M3)
 --------------------------------*/
 
 .mantra {
     text-align: center;
     font-size: 1.8rem;
     color: white;
-    background-image: url('IMAGE_MANTRA');
+    background-image: url('https://unsplash.com/photos/dark-blue-abstract-texture-5QgIuuBxKwM/download?force=true');
+    background-size: cover;
+    background-position: center;
 }
 
 .mantra::before {
@@ -175,11 +171,13 @@ section {
 }
 
 /* ------------------------------
-   CONTACT (bleu nuit profond)
+   CONTACT (C1)
 --------------------------------*/
 
 .contact {
-    background: #0A0F2A;
+    background-image: url('https://unsplash.com/photos/dark-blue-texture-2d4lAQAlbDA/download?force=true');
+    background-size: cover;
+    background-position: center;
     color: white;
     text-align: center;
 }
