@@ -53,14 +53,14 @@ section {
 .header {
     padding: 20px 12%;
     display: flex;
-    align-items: center;
+    justify-content: center;
 }
 
 .logo {
-    height: 70px;
+    height: 140px;
 }
 
-/* HERO */
+/* HERO — fond noir + logo + slogan */
 
 .hero {
     height: 85vh;
@@ -73,17 +73,11 @@ section {
     color: white;
 }
 
-.logo {
-    height: 140px;
-    margin-bottom: 20px;
-}
-
-.hero-text h2,
 .hero-text h1,
+.hero-text h2,
 .hero-text p {
     color: white;
 }
-
 
 .baseline {
     font-size: 1.4rem;
@@ -98,9 +92,10 @@ section {
     position: absolute;
     inset: 0;
     background-image: url("images/kora1.jpg");
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
-    opacity: 0.18;
+    opacity: 0.12;
 }
 
 .about * {
@@ -111,14 +106,16 @@ section {
 
 .positioning {
     background-image: url("images/network.jpg");
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .positioning::before {
     content:"";
     position:absolute;
     inset:0;
-    background:rgba(255,255,255,0.85);
+    background:rgba(255,255,255,0.88);
 }
 
 .positioning * {
@@ -135,8 +132,7 @@ section {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-
-    opacity:0.18;
+    opacity:0.12;
 }
 
 .services * {
@@ -162,11 +158,13 @@ section {
     box-shadow:0 10px 30px rgba(0,0,0,0.12);
 }
 
-/* INTERNATIONAL */
+/* INTERNATIONAL — correction africa.png */
 
 .international {
     background-image:url("images/africa.png");
-    background-size:cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     color:white;
 }
 
@@ -187,8 +185,7 @@ section {
     text-align:center;
     font-size:1.8rem;
     color:white;
-    background-image:url('https://images.unsplash.com/photo-1529243856184-fd5465488984?auto=format&fit=crop&w=2000&q=80');
-    background-size:cover;
+    background:black;
 }
 
 .mantra::before {
@@ -207,8 +204,7 @@ section {
 .contact {
     text-align:center;
     color:white;
-    background-image:url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=2000&q=80');
-    background-size:cover;
+    background:black;
 }
 
 .contact::before {
