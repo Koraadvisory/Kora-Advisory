@@ -7,6 +7,7 @@
     --night: #0A0A0A;
     --gold: #E8D7A8;
     --gold-soft: #E8D7A8CC;
+    --deep-gray: #1A1A1A;
 }
 
 /* BASE */
@@ -17,6 +18,10 @@ body {
     background-color: var(--ivory);
     color: var(--night);
     line-height: 1.6;
+
+    /* Bandes noires verticales */
+    border-left: 40px solid var(--night);
+    border-right: 40px solid var(--night);
 }
 
 h1, h2, h3 {
@@ -60,50 +65,48 @@ section {
     height: 260px;
 }
 
-/* HERO — fond noir + logo + kora dorée + espacement */
+/* HERO — fond noir + kora3 dorée + espacement */
 
 .hero {
-    height: 92vh;
-    background: black;
+    height: 70vh; /* hauteur réduite */
+    background: var(--night);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
-    padding-top: 40px;
+    padding-top: 20px;
 }
 
-/* Kora dorée plus petite */
+/* Kora dorée à gauche, en longueur */
 .hero::after {
     content: "";
     position: absolute;
-    right: 5%;
+    left: 3%;
     top: 50%;
     transform: translateY(-50%);
-    width: 260px;
-    height: 260px;
-    background-image: url("images/kora1.jpg");
+    width: 320px;
+    height: 320px;
+    background-image: url("images/kora3.jpg");
     background-size: contain;
     background-repeat: no-repeat;
-
-    /* Effet doré subtil */
-    opacity: 0.20;
+    opacity: 0.22;
     filter: sepia(1) hue-rotate(10deg) saturate(1.4) brightness(1.1);
     pointer-events: none;
 }
 
 /* Espacement du texte */
 .hero-text h2 {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
     color: white;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 
 .hero-text h1 {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     color: var(--gold);
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
 .baseline {
@@ -112,30 +115,20 @@ section {
     margin-top: 20px;
 }
 
-/* ABOUT — kora visible */
+/* ABOUT — image retirée */
 
 .about::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("images/kora1.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.22;
+    content: none;
 }
 
 .about * {
     position: relative;
 }
 
-/* POSITIONING — sphère visible */
+/* POSITIONNEMENT — sphère accentuée */
 
 .positioning {
-    background-image: url("images/network.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    position: relative;
 }
 
 .positioning::before {
@@ -153,15 +146,15 @@ section {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    opacity:0.20;
-    filter: sepia(1) hue-rotate(10deg) saturate(1.4);
+    opacity:0.35;
+    filter: saturate(1.6) contrast(1.1);
 }
 
 .positioning * {
     position:relative;
 }
 
-/* SERVICES — retirer l’image */
+/* SERVICES — image retirée */
 
 .services::before {
     content:none;
@@ -190,10 +183,10 @@ section {
     box-shadow:0 10px 30px rgba(0,0,0,0.12);
 }
 
-/* INTERNATIONAL — carte visible */
+/* INTERNATIONAL — remplacer africa par cdm */
 
 .international {
-    background-image:url("images/africa.png");
+    background-image:url("images/cdm.jpg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -211,14 +204,35 @@ section {
     position:relative;
 }
 
-/* MANTRA — séparation nette */
+/* PERSPECTIVES STRATEGIQUES — achieve en filigrane */
+
+.perspectives {
+    position: relative;
+}
+
+.perspectives::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:url("images/achieve.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity:0.15;
+}
+
+.perspectives * {
+    position: relative;
+}
+
+/* MANTRA — hauteur réduite */
 
 .mantra {
     text-align:center;
-    font-size:2rem;
+    font-size:1.8rem;
     color:var(--gold);
-    background:black;
-    padding: 140px 12%;
+    background:var(--night);
+    padding: 80px 12%;
     border-top: 1px solid var(--gold);
 }
 
@@ -233,34 +247,29 @@ section {
     position:relative;
 }
 
-/* CONTACT — Achieve Together en filigrane */
+/* CONTACT — footer élégant */
 
 .contact {
     text-align:center;
     color:var(--night);
     background:var(--ivory);
-    padding: 140px 12%;
-    position: relative;
+    padding: 100px 12%;
+    border-top: 1px solid var(--gold);
 }
 
 .contact::before {
-    content:"";
-    position:absolute;
-    inset:0;
-    background-image:url("images/achieve.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity:0.18;
-}
-
-.contact * {
-    position:relative;
+    content:none;
 }
 
 .contact h2 {
-    color:var(--night);
+    font-size: 2rem;
+    color: var(--night);
     margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 1.2rem;
+    opacity: 0.85;
 }
 
 .contact a {
@@ -285,7 +294,7 @@ font-size:1.9rem;
 .hero::after{
 width:200px;
 height:200px;
-right:2%;
+left:2%;
 }
 
 .service-grid{
