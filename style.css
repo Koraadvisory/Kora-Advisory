@@ -57,10 +57,10 @@ section {
 }
 
 .logo {
-    height: 250px;
+    height: 260px;
 }
 
-/* HERO — fond noir + logo + kora + slogan */
+/* HERO — fond noir + logo + kora dorée + espacement */
 
 .hero {
     height: 92vh;
@@ -71,48 +71,48 @@ section {
     justify-content: center;
     text-align: center;
     position: relative;
+    padding-top: 40px;
 }
 
-/* Kora en filigrane doré */
+/* Kora dorée plus petite */
 .hero::after {
     content: "";
     position: absolute;
-    right: 6%;
+    right: 5%;
     top: 50%;
     transform: translateY(-50%);
-    width: 420px;
-    height: 420px;
-    background-image: url("images/africa.png");
+    width: 260px;
+    height: 260px;
+    background-image: url("images/kora1.jpg");
     background-size: contain;
     background-repeat: no-repeat;
-    opacity: 0.22;
-    filter: sepia(1) hue-rotate(10deg) saturate(1.4);
+
+    /* Effet doré subtil */
+    opacity: 0.20;
+    filter: sepia(1) hue-rotate(10deg) saturate(1.4) brightness(1.1);
     pointer-events: none;
 }
 
-.hero-text {
-    position: relative;
-    z-index: 2;
-}
-
+/* Espacement du texte */
 .hero-text h2 {
-    font-size: 2.6rem;
+    font-size: 2.8rem;
     color: white;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
 }
 
 .hero-text h1 {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     color: var(--gold);
+    margin-top: 40px;
 }
 
 .baseline {
     font-size: 1.3rem;
     color: var(--gold);
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
-/* ABOUT */
+/* ABOUT — kora visible */
 
 .about::before {
     content: "";
@@ -122,14 +122,14 @@ section {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 0.12;
+    opacity: 0.22;
 }
 
 .about * {
     position: relative;
 }
 
-/* POSITIONING */
+/* POSITIONING — sphère visible */
 
 .positioning {
     background-image: url("images/network.jpg");
@@ -142,24 +142,29 @@ section {
     content:"";
     position:absolute;
     inset:0;
-    background:rgba(255,255,255,0.90);
+    background:rgba(255,255,255,0.85);
+}
+
+.positioning::after {
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:url("images/network.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity:0.20;
+    filter: sepia(1) hue-rotate(10deg) saturate(1.4);
 }
 
 .positioning * {
     position:relative;
 }
 
-/* SERVICES */
+/* SERVICES — retirer l’image */
 
 .services::before {
-    content:"";
-    position:absolute;
-    inset:0;
-    background-image:url("images/achieve.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity:0.18;
+    content:none;
 }
 
 .services * {
@@ -185,7 +190,7 @@ section {
     box-shadow:0 10px 30px rgba(0,0,0,0.12);
 }
 
-/* INTERNATIONAL */
+/* INTERNATIONAL — carte visible */
 
 .international {
     background-image:url("images/africa.png");
@@ -206,7 +211,7 @@ section {
     position:relative;
 }
 
-/* MANTRA */
+/* MANTRA — séparation nette */
 
 .mantra {
     text-align:center;
@@ -228,20 +233,25 @@ section {
     position:relative;
 }
 
-/* CONTACT */
+/* CONTACT — Achieve Together en filigrane */
 
 .contact {
     text-align:center;
     color:var(--night);
     background:var(--ivory);
     padding: 140px 12%;
+    position: relative;
 }
 
 .contact::before {
     content:"";
     position:absolute;
     inset:0;
-    background:rgba(255,255,255,0.55);
+    background-image:url("images/achieve.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity:0.18;
 }
 
 .contact * {
@@ -273,8 +283,8 @@ font-size:1.9rem;
 }
 
 .hero::after{
-width:260px;
-height:260px;
+width:200px;
+height:200px;
 right:2%;
 }
 
