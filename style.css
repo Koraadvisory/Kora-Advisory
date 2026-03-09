@@ -65,36 +65,25 @@ section {
 .hero {
     height: 85vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
+    background: black;
     text-align: center;
-    position: relative;
-    background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=80');
-    background-size: cover;
-    background-position: center;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        rgba(10,10,10,0.65),
-        rgba(10,10,10,0.45)
-    );
-}
-
-.hero-text {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-}
-
-.hero h1 {
-    font-size: 2.8rem;
     color: white;
 }
+
+.logo {
+    height: 140px;
+    margin-bottom: 20px;
+}
+
+.hero-text h2,
+.hero-text h1,
+.hero-text p {
+    color: white;
+}
+
 
 .baseline {
     font-size: 1.4rem;
@@ -143,7 +132,10 @@ section {
     position:absolute;
     inset:0;
     background-image:url("images/achieve.jpg");
-    background-size:cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
     opacity:0.18;
 }
 
@@ -173,7 +165,7 @@ section {
 /* INTERNATIONAL */
 
 .international {
-    background-image:url("images/africa.jpg");
+    background-image:url("images/africa.png");
     background-size:cover;
     color:white;
 }
