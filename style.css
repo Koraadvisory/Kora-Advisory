@@ -38,37 +38,10 @@ section {
     position: relative;
 }
 
-/* ANIMATIONS */
-
-.dynamic-text {
-    animation: floatUp 1.4s ease forwards;
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-@keyframes floatUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* HEADER */
-
-.header {
-    padding: 20px 12%;
-    display: flex;
-    justify-content: center;
-}
-
-.logo {
-    height: 260px;
-}
-
 /* HERO — fond noir + kora3 dorée + espacement */
 
 .hero {
-    height: 70vh; /* hauteur réduite */
+    height: 70vh;
     background: var(--night);
     display: flex;
     flex-direction: column;
@@ -79,34 +52,34 @@ section {
     padding-top: 20px;
 }
 
-/* Kora dorée à gauche, en longueur */
+/* Kora dorée à droite */
 .hero::after {
     content: "";
     position: absolute;
-    left: 3%;
+    right: 3%;
     top: 50%;
     transform: translateY(-50%);
-    width: 320px;
-    height: 320px;
+    width: 360px;
+    height: 360px;
     background-image: url("images/kora3.jpg");
     background-size: contain;
     background-repeat: no-repeat;
-    opacity: 0.22;
+    opacity: 0.30;
     filter: sepia(1) hue-rotate(10deg) saturate(1.4) brightness(1.1);
     pointer-events: none;
 }
 
 /* Espacement du texte */
 .hero-text h2 {
-    font-size: 2.6rem;
+    font-size: 2.2rem; /* tient sur une ligne */
     color: white;
     margin-bottom: 60px;
 }
 
 .hero-text h1 {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     color: var(--gold);
-    margin-top: 60px;
+    margin-top: 20px; /* phrase réapparait */
 }
 
 .baseline {
@@ -121,15 +94,7 @@ section {
     content: none;
 }
 
-.about * {
-    position: relative;
-}
-
 /* POSITIONNEMENT — sphère accentuée */
-
-.positioning {
-    position: relative;
-}
 
 .positioning::before {
     content:"";
@@ -154,36 +119,15 @@ section {
     position:relative;
 }
 
-/* SERVICES — image retirée */
+/* SERVICES — Nos Services */
 
-.services::before {
-    content:none;
+.services h2::before {
+    content: "Nos ";
+    color: var(--night);
+    font-weight: 600;
 }
 
-.services * {
-    position:relative;
-}
-
-.service-grid {
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:40px;
-}
-
-.service {
-    background:rgba(255,255,255,0.88);
-    padding:25px;
-    border-radius:8px;
-    box-shadow:0 4px 18px rgba(0,0,0,0.08);
-    transition:transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.service:hover {
-    transform:translateY(-6px);
-    box-shadow:0 10px 30px rgba(0,0,0,0.12);
-}
-
-/* INTERNATIONAL — remplacer africa par cdm */
+/* INTERNATIONAL — texte blanc + voile léger */
 
 .international {
     background-image:url("images/cdm.jpg");
@@ -197,54 +141,56 @@ section {
     content:"";
     position:absolute;
     inset:0;
-    background:rgba(10,10,10,0.25);
+    background:rgba(0,0,0,0.15); /* voile très léger */
 }
 
-.international * {
-    position:relative;
+.international h2,
+.international p {
+    color: white;
+    font-weight: 600;
 }
 
-/* PERSPECTIVES STRATEGIQUES — achieve en filigrane */
+/* PERSPECTIVES STRATEGIQUES — deux colonnes */
 
 .perspectives {
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
 }
 
-.perspectives::before {
-    content:"";
-    position:absolute;
-    inset:0;
-    background-image:url("images/achieve.jpg");
+.perspectives-text {
+    flex: 1;
+}
+
+.perspectives-image {
+    flex: 1;
+    background-image: url("images/achieve.jpg");
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
-    opacity:0.15;
+    background-position: center right;
+    height: 350px;
 }
 
-.perspectives * {
-    position: relative;
-}
-
-/* MANTRA — hauteur réduite */
+/* MANTRA — liste verticale centrée */
 
 .mantra {
     text-align:center;
-    font-size:1.8rem;
-    color:var(--gold);
-    background:var(--night);
+    background: var(--night);
     padding: 80px 12%;
     border-top: 1px solid var(--gold);
 }
 
-.mantra::before {
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(10,10,10,0.55);
+.mantra-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.mantra * {
-    position:relative;
+.mantra-list li {
+    color: var(--gold);
+    font-size: 2rem;
+    margin: 20px 0;
 }
 
 /* CONTACT — footer élégant */
@@ -257,13 +203,8 @@ section {
     border-top: 1px solid var(--gold);
 }
 
-.contact::before {
-    content:none;
-}
-
 .contact h2 {
     font-size: 2rem;
-    color: var(--night);
     margin-bottom: 20px;
 }
 
@@ -288,13 +229,22 @@ padding:60px 8%;
 }
 
 .hero h2{
-font-size:1.9rem;
+font-size:1.8rem;
 }
 
 .hero::after{
-width:200px;
-height:200px;
-left:2%;
+width:220px;
+height:220px;
+right:2%;
+}
+
+.perspectives {
+flex-direction: column;
+}
+
+.perspectives-image {
+width: 100%;
+height: 250px;
 }
 
 .service-grid{
