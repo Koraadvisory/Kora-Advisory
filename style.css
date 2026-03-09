@@ -1,4 +1,15 @@
 /* ------------------------------
+   VARIABLES GLOBALES
+--------------------------------*/
+
+:root {
+    --ivory: #FAF9F7;
+    --night: #0A0A0A;
+    --gold: #E8D7A8;
+    --gold-soft: #E8D7A8CC;
+}
+
+/* ------------------------------
    TYPOGRAPHIE & BASE
 --------------------------------*/
 
@@ -7,15 +18,15 @@
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background-color: #FAF9F7;
-    color: #0A0A0A;
+    background-color: var(--ivory);
+    color: var(--night);
     line-height: 1.6;
 }
 
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
     margin-bottom: 15px;
-    color: #0A0A0A;
+    color: var(--night);
 }
 
 section {
@@ -23,32 +34,38 @@ section {
     position: relative;
 }
 
-/* Animation fade-in */
-.fade-in {
+/* ------------------------------
+   ANIMATIONS
+--------------------------------*/
+
+.dynamic-text {
+    animation: floatUp 1.4s ease forwards;
     opacity: 0;
     transform: translateY(20px);
-    animation: fadeIn 1.2s ease forwards;
 }
 
-@keyframes fadeIn {
+@keyframes floatUp {
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* Parallax léger */
-.parallax {
+/* ------------------------------
+   PARALLAX DOUX
+--------------------------------*/
+
+.parallax-soft {
     background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
+    transform: translateZ(0);
 }
 
-/* Overlay */
-.overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(10, 10, 10, 0.45);
+/* ------------------------------
+   HARMONISATION GLOBALE DES IMAGES
+--------------------------------*/
+
+section::before {
+    filter: brightness(0.92) contrast(1.08) saturate(1.05);
 }
 
 /* ------------------------------
@@ -57,7 +74,7 @@ section {
 
 .header {
     padding: 20px 12%;
-    background: #FAF9F7;
+    background: var(--ivory);
 }
 
 .logo {
@@ -65,7 +82,7 @@ section {
 }
 
 /* ------------------------------
-   HERO (A2)
+   HERO OPTIMISÉ
 --------------------------------*/
 
 .hero {
@@ -79,19 +96,26 @@ section {
     background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=80');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
 }
 
 .hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(10, 10, 10, 0.55);
+    background: linear-gradient(
+        rgba(10, 10, 10, 0.65),
+        rgba(10, 10, 10, 0.45)
+    );
+    backdrop-filter: blur(1.5px);
+    z-index: 1;
 }
 
 .hero-text {
     position: relative;
     z-index: 2;
     max-width: 800px;
+    animation: floatUp 1.4s ease forwards;
 }
 
 .hero h1 {
@@ -102,22 +126,58 @@ section {
 .baseline {
     font-size: 1.4rem;
     margin-top: 10px;
-    color: #E8D7A8;
+    color: var(--gold);
 }
 
 /* ------------------------------
-   POSITIONNEMENT (P1)
+   À PROPOS — Image Kora n°1
 --------------------------------*/
 
-.positioning {
-    background-image: url('https://images.unsplash.com/photo-1581349481268-1c1c7e2c89e8?auto=format&fit=crop&w=2000&q=80');
+.about {
+    position: relative;
+}
+
+.about::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("images/kora1.jpg");
     background-size: cover;
     background-position: center;
+    opacity: 0.18;
+    z-index: 0;
+    filter: brightness(0.85) contrast(1.12) saturate(1.15);
+}
+
+.about * {
+    position: relative;
+    z-index: 2;
 }
 
 /* ------------------------------
-   SERVICES
+   SERVICES — Achieve.Together
 --------------------------------*/
+
+.services {
+    position: relative;
+}
+
+.services::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("images/achieve.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.18;
+    z-index: 0;
+    filter: brightness(0.9) contrast(1.2) saturate(1.1);
+}
+
+.services * {
+    position: relative;
+    z-index: 2;
+}
 
 .service-grid {
     display: grid;
@@ -133,12 +193,12 @@ section {
 }
 
 /* ------------------------------
-   INTERNATIONAL (I3)
+   INTERNATIONAL — Afrique satellite
 --------------------------------*/
 
 .international {
-    color: white;
-    background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=2000&q=80');
+    position: relative;
+    background-image: url("images/africa.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -148,10 +208,44 @@ section {
     position: absolute;
     inset: 0;
     background: rgba(10, 10, 10, 0.55);
+    backdrop-filter: blur(1px);
+    filter: brightness(0.78) contrast(1.15) saturate(1.1);
+    z-index: 1;
+}
+
+.international * {
+    position: relative;
+    z-index: 2;
 }
 
 /* ------------------------------
-   MANTRA (M3)
+   POSITIONNEMENT — Réseau moléculaire
+--------------------------------*/
+
+.positioning {
+    position: relative;
+    background-image: url("images/network.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.positioning::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(2px);
+    filter: brightness(1.05) contrast(1.05);
+    z-index: 1;
+}
+
+.positioning * {
+    position: relative;
+    z-index: 2;
+}
+
+/* ------------------------------
+   MANTRA
 --------------------------------*/
 
 .mantra {
@@ -161,6 +255,7 @@ section {
     background-image: url('https://images.unsplash.com/photo-1529243856184-fd5465488984?auto=format&fit=crop&w=2000&q=80');
     background-size: cover;
     background-position: center;
+    position: relative;
 }
 
 .mantra::before {
@@ -168,10 +263,16 @@ section {
     position: absolute;
     inset: 0;
     background: rgba(10, 10, 10, 0.55);
+    z-index: 1;
+}
+
+.mantra * {
+    position: relative;
+    z-index: 2;
 }
 
 /* ------------------------------
-   CONTACT (C1)
+   CONTACT
 --------------------------------*/
 
 .contact {
@@ -180,22 +281,22 @@ section {
     background-position: center;
     color: white;
     text-align: center;
+    position: relative;
+}
+
+.contact::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.55);
+    z-index: 1;
+}
+
+.contact * {
+    position: relative;
+    z-index: 2;
 }
 
 .contact h2 {
-    color: #E8D7A8;
-}
-
-/* ------------------------------
-   RESPONSIVE
---------------------------------*/
-
-@media (max-width: 900px) {
-    .service-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
+    color: var(--gold);
 }
