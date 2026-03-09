@@ -1,6 +1,6 @@
-/* ------------------------------
-   VARIABLES GLOBALES
---------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
+
+/* VARIABLES */
 
 :root {
     --ivory: #FAF9F7;
@@ -9,11 +9,7 @@
     --gold-soft: #E8D7A8CC;
 }
 
-/* ------------------------------
-   TYPOGRAPHIE & BASE
---------------------------------*/
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
+/* BASE */
 
 body {
     margin: 0;
@@ -26,7 +22,10 @@ body {
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
     margin-bottom: 15px;
-    color: var(--night);
+}
+
+p {
+    max-width: 720px;
 }
 
 section {
@@ -34,9 +33,7 @@ section {
     position: relative;
 }
 
-/* ------------------------------
-   ANIMATIONS
---------------------------------*/
+/* ANIMATIONS */
 
 .dynamic-text {
     animation: floatUp 1.4s ease forwards;
@@ -51,39 +48,19 @@ section {
     }
 }
 
-/* ------------------------------
-   PARALLAX DOUX
---------------------------------*/
-
-.parallax-soft {
-    background-attachment: fixed;
-    transform: translateZ(0);
-}
-
-/* ------------------------------
-   HARMONISATION GLOBALE DES IMAGES
---------------------------------*/
-
-section::before {
-    filter: brightness(0.92) contrast(1.08) saturate(1.05);
-}
-
-/* ------------------------------
-   HEADER
---------------------------------*/
+/* HEADER */
 
 .header {
     padding: 20px 12%;
-    background: var(--ivory);
+    display: flex;
+    align-items: center;
 }
 
 .logo {
     height: 70px;
 }
 
-/* ------------------------------
-   HERO OPTIMISÉ
---------------------------------*/
+/* HERO */
 
 .hero {
     height: 85vh;
@@ -91,12 +68,11 @@ section::before {
     align-items: center;
     justify-content: center;
     color: white;
-    position: relative;
     text-align: center;
+    position: relative;
     background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=80');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
 }
 
 .hero::before {
@@ -104,18 +80,15 @@ section::before {
     position: absolute;
     inset: 0;
     background: linear-gradient(
-        rgba(10, 10, 10, 0.65),
-        rgba(10, 10, 10, 0.45)
+        rgba(10,10,10,0.65),
+        rgba(10,10,10,0.45)
     );
-    backdrop-filter: blur(1.5px);
-    z-index: 1;
 }
 
 .hero-text {
     position: relative;
     z-index: 2;
     max-width: 800px;
-    animation: floatUp 1.4s ease forwards;
 }
 
 .hero h1 {
@@ -129,13 +102,7 @@ section::before {
     color: var(--gold);
 }
 
-/* ------------------------------
-   À PROPOS — Image Kora n°1
---------------------------------*/
-
-.about {
-    position: relative;
-}
+/* ABOUT */
 
 .about::before {
     content: "";
@@ -145,158 +112,142 @@ section::before {
     background-size: cover;
     background-position: center;
     opacity: 0.18;
-    z-index: 0;
-    filter: brightness(0.85) contrast(1.12) saturate(1.15);
 }
 
 .about * {
     position: relative;
-    z-index: 2;
 }
 
-/* ------------------------------
-   SERVICES — Achieve.Together
---------------------------------*/
-
-.services {
-    position: relative;
-}
-
-.services::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("images/achieve.jpg");
-    background-size: cover;
-    background-position: center;
-    opacity: 0.18;
-    z-index: 0;
-    filter: brightness(0.9) contrast(1.2) saturate(1.1);
-}
-
-.services * {
-    position: relative;
-    z-index: 2;
-}
-
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-}
-
-.service {
-    background: white;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-}
-
-/* ------------------------------
-   INTERNATIONAL — Afrique satellite
---------------------------------*/
-
-.international {
-    position: relative;
-    background-image: url("images/africa.jpg");
-    background-size: cover;
-    background-position: center;
-}
-
-.international::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(10, 10, 10, 0.55);
-    backdrop-filter: blur(1px);
-    filter: brightness(0.78) contrast(1.15) saturate(1.1);
-    z-index: 1;
-}
-
-.international * {
-    position: relative;
-    z-index: 2;
-}
-
-/* ------------------------------
-   POSITIONNEMENT — Réseau moléculaire
---------------------------------*/
+/* POSITIONING */
 
 .positioning {
-    position: relative;
     background-image: url("images/network.jpg");
     background-size: cover;
-    background-position: center;
 }
 
 .positioning::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.82);
-    backdrop-filter: blur(2px);
-    filter: brightness(1.05) contrast(1.05);
-    z-index: 1;
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(255,255,255,0.85);
 }
 
 .positioning * {
-    position: relative;
-    z-index: 2;
+    position:relative;
 }
 
-/* ------------------------------
-   MANTRA
---------------------------------*/
+/* SERVICES */
+
+.services::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:url("images/achieve.jpg");
+    background-size:cover;
+    opacity:0.18;
+}
+
+.services * {
+    position:relative;
+}
+
+.service-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px;
+}
+
+.service {
+    background:white;
+    padding:25px;
+    border-radius:8px;
+    box-shadow:0 4px 18px rgba(0,0,0,0.08);
+    transition:transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.service:hover {
+    transform:translateY(-6px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.12);
+}
+
+/* INTERNATIONAL */
+
+.international {
+    background-image:url("images/africa.jpg");
+    background-size:cover;
+    color:white;
+}
+
+.international::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(10,10,10,0.55);
+}
+
+.international * {
+    position:relative;
+}
+
+/* MANTRA */
 
 .mantra {
-    text-align: center;
-    font-size: 1.8rem;
-    color: white;
-    background-image: url('https://images.unsplash.com/photo-1529243856184-fd5465488984?auto=format&fit=crop&w=2000&q=80');
-    background-size: cover;
-    background-position: center;
-    position: relative;
+    text-align:center;
+    font-size:1.8rem;
+    color:white;
+    background-image:url('https://images.unsplash.com/photo-1529243856184-fd5465488984?auto=format&fit=crop&w=2000&q=80');
+    background-size:cover;
 }
 
 .mantra::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(10, 10, 10, 0.55);
-    z-index: 1;
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(10,10,10,0.55);
 }
 
 .mantra * {
-    position: relative;
-    z-index: 2;
+    position:relative;
 }
 
-/* ------------------------------
-   CONTACT
---------------------------------*/
+/* CONTACT */
 
 .contact {
-    background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=2000&q=80');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-    position: relative;
+    text-align:center;
+    color:white;
+    background-image:url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=2000&q=80');
+    background-size:cover;
 }
 
 .contact::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(10, 10, 10, 0.55);
-    z-index: 1;
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(10,10,10,0.55);
 }
 
 .contact * {
-    position: relative;
-    z-index: 2;
+    position:relative;
 }
 
 .contact h2 {
-    color: var(--gold);
+    color:var(--gold);
+}
+
+/* RESPONSIVE */
+
+@media (max-width:900px){
+
+section{
+padding:60px 8%;
+}
+
+.hero h1{
+font-size:2rem;
+}
+
+.service-grid{
+grid-template-columns:1fr;
+}
+
 }
