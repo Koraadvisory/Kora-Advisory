@@ -1,331 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
-
-/* VARIABLES */
-
-:root {
-    --ivory: #FAF9F7;
-    --night: #0A0A0A;
-    --gold: #E8D7A8;
-    --gold-soft: #E8D7A8CC;
-    --deep-gray: #1A1A1A;
-}
-
-/* BASE */
-
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background-color: var(--ivory);
-    color: var(--night);
-    line-height: 1.6;
-
-    /* Bandes noires verticales */
-    border-left: 40px solid var(--night);
-    border-right: 40px solid var(--night);
-}
-
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 15px;
-}
-
-p {
-    max-width: 720px;
-}
-
-section {
-    padding: 80px 12%;
-    position: relative;
-}
-
-/* HERO — fond noir + kora3 dorée + espacement */
-
-.hero {
-    height: 70vh;
-    background: var(--night);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    padding-top: 20px;
-}
-
-/* Kora dorée à droite */
-.hero::after {
-    content: "";
-    position: absolute;
-    right: 3%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 360px;
-    height: 360px;
-    background-image: url("images/kora3.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.30;
-    filter: sepia(1) hue-rotate(10deg) saturate(1.4) brightness(1.1);
-    pointer-events: none;
-}
-
-/* Espacement du texte */
-.hero-text h2 {
-    font-size: 2.2rem; /* tient sur une ligne */
-    color: white;
-    margin-bottom: 60px;
-}
-
-.hero-text h1 {
-    font-size: 1.6rem;
-    color: var(--gold);
-    margin-top: 20px; /* phrase réapparait */
-}
-
-.baseline {
-    font-size: 1.3rem;
-    color: var(--gold);
-    margin-top: 20px;
-}
-
-/* ABOUT — image retirée */
-
-.about::before {
-    content: none;
-}
-
-/* POSITIONNEMENT — sphère accentuée */
-
-.positioning::before {
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(255,255,255,0.85);
-}
-
-.positioning::after {
-    content:"";
-    position:absolute;
-    inset:0;
-    background-image:url("images/network.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity:0.35;
-    filter: saturate(1.6) contrast(1.1);
-}
-
-.positioning * {
-    position:relative;
-}
-
-/* SERVICES — Nos Services */
-
-.services h2::before {
-    content: "Nos ";
-    color: var(--night);
-    font-weight: 600;
-}
-
-/* INTERNATIONAL — texte blanc + voile léger */
-
-.international {
-    background-image:url("images/cdm.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    color:white;
-}
-
-.international::before {
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.15); /* voile très léger */
-}
-
-.international h2,
-.international p {
-    color: white;
-    font-weight: 600;
-}
-
-/* PERSPECTIVES STRATEGIQUES — deux colonnes */
-
-.perspectives {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-.perspectives-text {
-    flex: 1;
-}
-
-.perspectives-image {
-    flex: 1;
-    background-image: url("images/achieve.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center right;
-    height: 350px;
-}
-
-/* MANTRA — liste verticale centrée */
-
-.mantra {
-    text-align:center;
-    background: var(--night);
-    padding: 80px 12%;
-    border-top: 1px solid var(--gold);
-}
-
-.mantra-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.mantra-list li {
-    color: var(--gold);
-    font-size: 2rem;
-    margin: 20px 0;
-}
-
-/* CONTACT — footer élégant */
-
-.contact {
-    text-align:center;
-    color:var(--night);
-    background:var(--ivory);
-    padding: 100px 12%;
-    border-top: 1px solid var(--gold);
-}
-
-.contact h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.contact p {
-    font-size: 1.2rem;
-    opacity: 0.85;
-}
-
-.contact a {
-    color: var(--night);
-    font-weight: 600;
-    border-bottom: 1px solid var(--gold);
-    padding-bottom: 4px;
-}
-
-/* RESPONSIVE */
-
-@media (max-width:900px){
-
-section{
-padding:60px 8%;
-}
-
-.hero h2{
-font-size:1.8rem;
-}
-
-.hero::after{
-width:220px;
-height:220px;
-right:2%;
-}
-
-.perspectives {
-flex-direction: column;
-}
-
-.perspectives-image {
-width: 100%;
-height: 250px;
-}
-
-.service-grid{
-grid-template-columns:1fr;
-}
-
-}
-/* 1. Logo : revenir à la bonne taille */
+/* 1. Logo : restaurer la bonne taille */
 .logo {
-    height: 260px;
+    height: 260px !important;
 }
 
-/* 2. HERO : garder la kora à droite mais plus visible, sans toucher au reste */
-.hero::after {
-    right: 3%;
-    width: 340px;
-    height: 340px;
-    opacity: 0.32;
-}
-
-/* 3. "Écrivons ensemble..." sur une ligne + remettre la phrase en dessous */
-.hero-text h2 {
-    font-size: 2.1rem;   /* un peu plus petit pour tenir sur une ligne */
-    margin-bottom: 40px;
-}
-
-.hero-text h1 {
-    margin-top: 10px;    /* réduit pour que la phrase ne disparaisse pas trop bas */
-}
-
-/* 4. Enlever le "Nos " ajouté par CSS et le gérer dans le HTML si tu veux */
-.services h2::before {
-    content: none;
-}
-
-/* 5. Vision internationale : texte blanc + voile très léger, sans toucher aux proportions de l’image */
+/* 2. Vision internationale : texte lisible + recentrage */
 .international {
-    color: white;
+    padding-top: 120px;
+    padding-bottom: 120px;
 }
 
 .international::before {
-    background: rgba(0, 0, 0, 0.12); /* voile très léger */
+    background: rgba(0,0,0,0.12) !important; /* voile très léger */
 }
 
 .international h2,
 .international p {
-    color: white;
+    color: white !important;
     font-weight: 600;
 }
 
-/* 6. Perspectives stratégiques : remettre l’image achieve en fond, sans mise en colonnes (pour éviter les bugs) */
-.perspectives {
-    position: relative;
-}
-
-.perspectives::before {
+/* 3. Remettre l’image achieve.jpg dans la bonne section */
+.perspectives::before,
+.services-strategiques::before {
     content: "";
     position: absolute;
     inset: 0;
     background-image: url("images/achieve.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center right;
+    background-size: cover;
+    background-position: right center;
     opacity: 0.18;
     pointer-events: none;
 }
 
-.perspectives * {
-    position: relative;
-}
-
-/* 7. Structurer / Relier / Co-créer : remettre le texte simple (on pourra retravailler la mise en forme après) */
-.mantra {
-    text-align: center;
-    background: var(--night);
-    padding: 80px 12%;
-    border-top: 1px solid var(--gold);
-}
-
+/* 4. Structurer / Relier / Co‑créer : remettre le texte visible */
 .mantra p {
-    color: var(--gold);
-    font-size: 1.9rem;
+    color: var(--gold) !important;
+    font-size: 2rem;
+    text-align: center;
     margin: 0;
+}
+
+/* 5. Construisons ensemble… + Initiative culturelle : recentrer */
+.contact {
+    text-align: center !important;
+}
+
+.contact h2,
+.contact p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 6. Corriger les paragraphes qui sortent de l’écran */
+section p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 7. Kora plus visible mais élégante */
+.hero::after {
+    opacity: 0.32 !important;
+    width: 340px !important;
+    height: 340px !important;
+    right: 3% !important;
+}
+
+/* 8. Écrivons ensemble sur une ligne */
+.hero-text h2 {
+    font-size: 2.1rem !important;
+    white-space: nowrap;
 }
