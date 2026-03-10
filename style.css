@@ -3,246 +3,305 @@
 /* VARIABLES */
 
 :root {
-    --ivory: #FAF9F7;
-    --night: #0A0A0A;
-    --gold: #E8D7A8;
-    --gold-soft: #E8D7A8CC;
-    --deep-gray: #1A1A1A;
+    --ivory:#FAF9F7;
+    --night:#0A0A0A;
+    --gold:#E8D7A8;
+    --gold-soft:#E8D7A8CC;
+    --deep-gray:#1A1A1A;
 }
 
 /* BASE */
 
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background-color: var(--ivory);
-    color: var(--night);
-    line-height: 1.6;
+body{
+margin:0;
+font-family:'Inter',sans-serif;
+background:var(--ivory);
+color:var(--night);
+line-height:1.7;
 }
 
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 15px;
+h1,h2,h3{
+font-family:'Playfair Display',serif;
+margin-bottom:20px;
 }
 
-p {
-    max-width: 720px;
-    margin-left: auto;
-    margin-right: auto;
+p{
+max-width:720px;
+margin-left:auto;
+margin-right:auto;
+font-size:17px;
+line-height:1.75;
 }
 
-section {
-    padding: 80px 12%;
-    position: relative;
+section{
+padding:100px 12%;
+position:relative;
 }
 
-/* LOGO */
+/* HEADER */
 
-.logo {
-    height: 260px;
+.header{
+display:flex;
+justify-content:center;
+padding:30px 12%;
 }
 
-/* HERO — fond noir + kora3 dorée + espacement */
-
-.hero {
-    height: 70vh;
-    background: var(--night);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    padding-top: 20px;
+.logo{
+height:95px;
 }
 
-/* Kora dorée à droite */
-.hero::after {
-    content: "";
-    position: absolute;
-    right: 3%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 340px;
-    height: 340px;
-    background-image: url("images/kora3.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.32;
-    filter: sepia(1) hue-rotate(10deg) saturate(1.4) brightness(1.1);
-    pointer-events: none;
+/* HERO */
+
+.hero{
+height:70vh;
+background:var(--night);
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+position:relative;
+padding-top:20px;
 }
 
-/* Espacement du texte */
-.hero-text h2 {
-    font-size: 2.1rem;
-    color: white;
-    margin-bottom: 40px;
-    white-space: nowrap;
+.hero::after{
+content:"";
+position:absolute;
+right:3%;
+top:50%;
+transform:translateY(-50%);
+width:320px;
+height:320px;
+background-image:url("images/kora3.jpg");
+background-size:contain;
+background-repeat:no-repeat;
+opacity:.28;
+filter:sepia(1) saturate(1.4) brightness(1.1);
+pointer-events:none;
 }
 
-.hero-text h1 {
-    font-size: 1.6rem;
-    color: var(--gold);
-    margin-top: 10px;
+.hero-text h2{
+font-size:2rem;
+color:white;
+margin-bottom:35px;
+max-width:900px;
 }
 
-.baseline {
-    font-size: 1.3rem;
-    color: var(--gold);
-    margin-top: 20px;
+.hero-text h1{
+font-size:1.5rem;
+color:var(--gold);
+margin-top:10px;
 }
 
-/* ABOUT — image retirée */
-
-.about::before {
-    content: none;
+.baseline{
+font-size:1.3rem;
+color:var(--gold);
+margin-top:18px;
 }
 
-/* POSITIONNEMENT — sphère accentuée */
-
-.positioning::before {
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(255,255,255,0.85);
+.sub{
+opacity:.85;
+color:white;
 }
 
-.positioning::after {
-    content:"";
-    position:absolute;
-    inset:0;
-    background-image:url("images/network.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity:0.35;
-    filter: saturate(1.6) contrast(1.1);
+/* ABOUT */
+
+.about{
+background:white;
 }
 
-.positioning * {
-    position:relative;
+/* POSITIONING */
+
+.positioning::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(255,255,255,0.86);
 }
 
-/* SERVICES — titre propre */
-
-.services h2::before {
-    content: none;
+.positioning::after{
+content:"";
+position:absolute;
+inset:0;
+background-image:url("images/network.jpg");
+background-size:cover;
+background-position:center;
+opacity:.28;
 }
 
-/* INTERNATIONAL — texte blanc + voile léger */
-
-.international {
-    background-image:url("images/cdm.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding-top: 120px;
-    padding-bottom: 120px;
+.positioning *{
+position:relative;
 }
 
-.international::before {
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.12);
+.positioning ul{
+margin-top:20px;
+padding-left:20px;
+}
+
+.positioning li{
+margin-bottom:10px;
+}
+
+/* SERVICES */
+
+.services{
+background:white;
+}
+
+.service-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:40px;
+margin-top:50px;
+}
+
+.service{
+background:white;
+padding:35px;
+border-radius:6px;
+border:1px solid #eee;
+transition:all .35s ease;
+}
+
+.service:hover{
+transform:translateY(-6px);
+box-shadow:0 18px 40px rgba(0,0,0,0.08);
+}
+
+/* INTERNATIONAL */
+
+.international{
+background-image:url("images/cdm.jpg");
+background-size:cover;
+background-position:center;
+padding-top:120px;
+padding-bottom:120px;
+}
+
+.international::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.15);
 }
 
 .international h2,
-.international p {
-    color: white;
-    font-weight: 600;
+.international p{
+color:white;
+font-weight:500;
 }
 
-/* PERSPECTIVES STRATEGIQUES — image en fond à droite */
-
-.perspectives {
-    position: relative;
+.international *{
+position:relative;
 }
 
-.perspectives::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("images/achieve.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center right;
-    opacity: 0.18;
-    pointer-events: none;
+/* INSIGHTS / PERSPECTIVES */
+
+.insights{
+position:relative;
 }
 
-.perspectives * {
-    position: relative;
+.insights::before{
+content:"";
+position:absolute;
+inset:0;
+background-image:url("images/achieve.jpg");
+background-size:cover;
+background-position:center right;
+opacity:.15;
+pointer-events:none;
 }
 
-/* MANTRA — texte simple visible */
-
-.mantra {
-    text-align: center;
-    background: var(--night);
-    padding: 80px 12%;
-    border-top: 1px solid var(--gold);
+.insights *{
+position:relative;
 }
 
-.mantra p {
-    color: var(--gold);
-    font-size: 2rem;
-    margin: 0;
+.insights ul{
+margin-top:25px;
+padding-left:20px;
 }
 
-/* CONTACT — footer élégant */
-
-.contact {
-    text-align:center;
-    color:var(--night);
-    background:var(--ivory);
-    padding: 100px 12%;
-    border-top: 1px solid var(--gold);
+.insights li{
+margin-bottom:10px;
 }
 
-.contact h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+/* MANTRA */
+
+.mantra{
+text-align:center;
+background:var(--night);
+padding:90px 12%;
+border-top:1px solid var(--gold);
 }
 
-.contact p {
-    font-size: 1.2rem;
-    opacity: 0.85;
+.mantra h2{
+color:var(--gold);
+font-size:2rem;
+margin:0;
 }
 
-.contact a {
-    color: var(--night);
-    font-weight: 600;
-    border-bottom: 1px solid var(--gold);
-    padding-bottom: 4px;
+/* CONTACT */
+
+.contact{
+text-align:center;
+background:var(--ivory);
+padding:110px 12%;
+border-top:1px solid var(--gold);
+}
+
+.contact h2{
+font-size:2rem;
+margin-bottom:20px;
+}
+
+.contact p{
+font-size:1.2rem;
+opacity:.85;
+}
+
+.contact a{
+color:var(--night);
+font-weight:600;
+border-bottom:1px solid var(--gold);
+padding-bottom:4px;
+text-decoration:none;
+}
+
+/* ANIMATIONS */
+
+.dynamic-text{
+opacity:0;
+transform:translateY(20px);
+animation:fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp{
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 /* RESPONSIVE */
 
-@media (max-width:900px){
+@media(max-width:900px){
 
 section{
-padding:60px 8%;
+padding:70px 8%;
 }
 
-.hero h2{
-font-size:1.8rem;
+.hero-text h2{
+font-size:1.6rem;
 }
 
 .hero::after{
-width:220px;
-height:220px;
+width:200px;
+height:200px;
 right:2%;
 }
 
 .service-grid{
 grid-template-columns:1fr;
-}
-
-.perspectives::before {
-background-size: cover;
-opacity: 0.15;
 }
 
 }
