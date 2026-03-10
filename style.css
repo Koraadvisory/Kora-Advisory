@@ -11,11 +11,20 @@ margin:0;
 font-family:Inter,sans-serif;
 background:var(--ivory);
 color:var(--night);
-line-height:1.7;
+line-height:1.8;
 }
 
 h1,h2,h3{
 font-family:'Playfair Display',serif;
+}
+
+h1{
+font-size:2.4rem;
+}
+
+h2{
+font-size:2rem;
+margin-bottom:30px;
 }
 
 section{
@@ -35,7 +44,7 @@ z-index:1000;
 }
 
 .logo{
-height:130px;
+height:150px;
 }
 
 .nav{
@@ -53,7 +62,7 @@ position:relative;
 .nav a::after{
 content:"";
 position:absolute;
-bottom:-5px;
+bottom:-4px;
 left:0;
 width:0;
 height:1px;
@@ -66,7 +75,7 @@ width:100%;
 }
 
 .hero{
-height:75vh;
+height:80vh;
 background:var(--night);
 display:flex;
 align-items:center;
@@ -86,34 +95,48 @@ height:260px;
 background-image:url("images/kora3.jpg");
 background-size:contain;
 background-repeat:no-repeat;
-opacity:.28;
-filter:sepia(1) saturate(1.4);
+opacity:.25;
 }
 
-.hero::before{
-left:4%;
-}
-
-.hero::after{
-right:4%;
-}
+.hero::before{left:4%;}
+.hero::after{right:4%;}
 
 .hero h1{
 color:var(--gold);
-font-size:1.7rem;
 max-width:900px;
 margin:auto;
 }
 
-.hero h2{
+.hero-intro{
 color:white;
-font-size:2rem;
-margin-top:30px;
+max-width:720px;
+margin:30px auto;
+font-size:1.2rem;
 }
 
 .baseline{
 color:var(--gold);
-margin-top:25px;
+margin-top:20px;
+font-size:1.1rem;
+letter-spacing:1px;
+}
+
+.positioning{
+position:relative;
+}
+
+.positioning::before{
+content:"";
+position:absolute;
+inset:0;
+background-image:url("images/network.jpg");
+background-size:cover;
+background-position:center;
+opacity:.22;
+}
+
+.positioning *{
+position:relative;
 }
 
 .service-grid{
@@ -135,6 +158,25 @@ transform:translateY(-8px);
 box-shadow:0 15px 35px rgba(0,0,0,.08);
 }
 
+.approach-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:40px;
+margin-top:40px;
+}
+
+.approach-step{
+background:var(--ivory);
+padding:35px;
+border:1px solid #eee;
+transition:.3s;
+}
+
+.approach-step:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
 .international{
 background-image:url("images/cdm.jpg");
 background-size:cover;
@@ -147,7 +189,7 @@ position:relative;
 content:"";
 position:absolute;
 inset:0;
-background:rgba(0,0,0,.2);
+background:rgba(0,0,0,.25);
 }
 
 .international *{
@@ -161,7 +203,22 @@ text-align:center;
 }
 
 .contact{
+position:relative;
 text-align:center;
+}
+
+.contact::before{
+content:"";
+position:absolute;
+inset:0;
+background-image:url("images/achieve.jpg");
+background-size:cover;
+background-position:center right;
+opacity:.15;
+}
+
+.contact *{
+position:relative;
 }
 
 .footer{
@@ -217,7 +274,8 @@ section{
 padding:70px 8%;
 }
 
-.service-grid{
+.service-grid,
+.approach-grid{
 grid-template-columns:1fr;
 }
 
