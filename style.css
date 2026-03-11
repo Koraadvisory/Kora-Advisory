@@ -1,12 +1,16 @@
+/* GLOBAL */
+
 body{
 
-font-family: 'Inter', sans-serif;
+font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
 margin:0;
 color:#111;
-background:white;
 line-height:1.6;
+background:white;
 
 }
+
+/* HEADER */
 
 .header{
 
@@ -25,7 +29,7 @@ z-index:1000;
 
 .logo{
 
-height:32px;
+height:36px;
 
 }
 
@@ -45,6 +49,8 @@ font-size:13px;
 
 }
 
+/* HERO */
+
 .hero{
 
 min-height:100vh;
@@ -56,67 +62,67 @@ overflow:hidden;
 
 }
 
+/* KORA VISUELLE */
+
 .hero::before{
 
 content:"";
 position:absolute;
-left:-150px;
+left:-80px;
 top:50%;
 transform:translateY(-50%);
-width:700px;
-height:700px;
-background:url("images/kora.png") no-repeat;
+width:800px;
+height:800px;
+background:url("kora.png");
 background-size:contain;
-opacity:0.15;
-filter:drop-shadow(0 0 40px rgba(212,175,55,0.3));
+background-repeat:no-repeat;
+
+opacity:0.35;
+
+filter:
+drop-shadow(0 0 80px rgba(212,175,55,0.45))
+brightness(1.1);
+
+pointer-events:none;
 
 }
 
-.hero-content{
+/* TEXTE HERO */
 
-max-width:600px;
+.hero-text{
+
+max-width:650px;
 z-index:2;
 
 }
 
 h1{
 
-font-size:48px;
-font-weight:500;
+font-size:52px;
 line-height:1.2;
+font-weight:500;
 
 }
 
 .hero-intro{
 
-margin-top:20px;
-font-size:20px;
+font-size:22px;
+margin-top:25px;
 color:#444;
 
 }
 
-.cta{
+.baseline{
 
-display:inline-block;
-margin-top:35px;
-padding:14px 30px;
-border:1px solid #111;
-text-decoration:none;
-color:#111;
-font-size:14px;
-letter-spacing:0.05em;
-transition:all .3s;
+margin-top:40px;
+font-size:18px;
+letter-spacing:0.06em;
 
 }
 
-.cta:hover{
+/* SECTIONS */
 
-background:#111;
-color:white;
-
-}
-
-.section{
+section{
 
 padding:120px 10%;
 max-width:1100px;
@@ -124,13 +130,17 @@ margin:auto;
 
 }
 
-.light{
+h2{
 
-background:#fafafa;
+font-size:32px;
+font-weight:500;
 
 }
 
-.grid{
+/* GRILLES */
+
+.service-grid,
+.approach-grid{
 
 display:grid;
 grid-template-columns:repeat(3,1fr);
@@ -139,54 +149,84 @@ margin-top:40px;
 
 }
 
-.card{
+.service,
+.approach-step{
 
 padding:35px;
 border:1px solid rgba(0,0,0,0.05);
-transition:.3s;
+background:white;
+transition:.35s;
 
 }
 
-.card:hover{
+/* HOVER */
 
-transform:translateY(-8px);
-box-shadow:0 20px 40px rgba(0,0,0,0.08);
+.service:hover,
+.approach-step:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+0 20px 40px rgba(0,0,0,0.08);
 
 }
+
+/* MANTRA */
 
 .mantra{
 
-padding:140px 10%;
 text-align:center;
-font-size:32px;
+font-size:34px;
 font-weight:500;
+padding:160px 10%;
 
 }
+
+/* CONTACT */
+
+.contact a{
+
+font-size:20px;
+text-decoration:none;
+color:#111;
+
+}
+
+/* FOOTER */
 
 .footer{
 
 padding:60px;
 text-align:center;
-font-size:14px;
 color:#666;
 
 }
 
-.fade{
+/* ANIMATIONS */
+
+.dynamic-text{
 
 opacity:0;
-transform:translateY(20px);
-transition:all 1s;
+transform:translateY(25px);
+transition:all 1s ease;
 
 }
 
-.fade.show{
+.dynamic-text.show{
 
 opacity:1;
 transform:translateY(0);
 
 }
 
+/* IMAGES */
+
+img{
+
+max-width:100%;
+height:auto;
+
+}
 
 /* RESPONSIVE */
 
@@ -200,9 +240,9 @@ padding:0 30px;
 
 .hero::before{
 
-width:420px;
+width:450px;
 left:-200px;
-opacity:0.1;
+opacity:0.2;
 
 }
 
@@ -212,7 +252,14 @@ font-size:34px;
 
 }
 
-.grid{
+.hero-intro{
+
+font-size:18px;
+
+}
+
+.service-grid,
+.approach-grid{
 
 grid-template-columns:1fr;
 
@@ -224,7 +271,7 @@ display:none;
 
 }
 
-.section{
+section{
 
 padding:90px 30px;
 
