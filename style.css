@@ -47,34 +47,55 @@ padding:100px 10%;
 position:relative;
 }
 
-/* HEADER */
 
-.header{
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:25px 8%;
-background:white;
+/* HEADER MIS À JOUR */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 8%; /* Réduit pour gagner de l'espace en hauteur */
+    background: white;
+    position: sticky; /* Reste en haut au scroll */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
 }
 
-.logo{
-height:85px;
+/* Structure du nouveau logo horizontal */
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 15px;
 }
 
-.nav{
-display:flex;
-align-items:center;
-gap:50px;
-margin-left:auto;
-margin-right:40px;
+.logo-icon {
+    height: 55px; /* Plus petit et élégant */
+    width: auto;
 }
 
-.nav a{
-text-decoration:none;
-color:#111;
-font-size:16px;
-font-weight:500;
-letter-spacing:.3px;
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid var(--gold);
+    padding-left: 15px;
+    line-height: 1.1;
+}
+
+.brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--night);
+    letter-spacing: 1.5px;
+}
+
+.brand-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 4px;
+    margin-top: 2px;
 }
 
 .nav a:hover{
@@ -449,4 +470,21 @@ gap:40px;
 text-align:center;
 }
 
+}
+
+/* FILIGRANE RÉSEAU */
+body::before {
+    content: "";
+    position: fixed;
+    top: 15%;
+    right: -10%;
+    width: 50%;
+    height: 70%;
+    background-image: url("images/network.jpg"); /* Utilisation de ton image existante */
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.04; /* Très subtil sur le fond Ivory */
+    pointer-events: none;
+    z-index: -1;
+    filter: grayscale(100%);
 }
