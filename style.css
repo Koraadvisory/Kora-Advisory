@@ -374,53 +374,21 @@ text-decoration:none;
 
 /* FOOTER */
 
-.footer{
-background:#000;
-color:white;
-padding:70px 8%;
+/* Adaptation du logo pour le fond noir du footer */
+.footer-variant .brand-name {
+    color: #FFFFFF; /* Texte KORA en blanc */
 }
 
-.footer-grid{
-display:grid;
-grid-template-columns:1.5fr 1fr 1fr;
-gap:80px;
-align-items:start;
+.footer-variant .logo-text {
+    border-left: 1px solid var(--gold); /* Garde la ligne dorée */
 }
 
-.footer-logo{
-height:45px;
-margin-bottom:20px;
+.footer-variant .brand-sub {
+    color: var(--gold); /* Garde ADVISORY en doré */
 }
 
-.footer p{
-color:#ddd;
-max-width:400px;
-line-height:1.6;
-}
-
-.footer h4{
-color:#E8D7A8;
-margin-bottom:15px;
-}
-
-.footer a{
-display:block;
-color:#ccc;
-text-decoration:none;
-margin-bottom:8px;
-}
-
-.footer a:hover{
-color:white;
-}
-
-.footer-bottom{
-margin-top:60px;
-border-top:1px solid rgba(255,255,255,0.15);
-padding-top:20px;
-text-align:center;
-font-size:14px;
-color:#999;
+.footer-logo-container {
+    margin-bottom: 25px; /* Espace avec le texte en dessous */
 }
 
 /* ANIMATIONS TEXTE */
