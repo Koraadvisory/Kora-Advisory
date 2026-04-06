@@ -509,6 +509,9 @@ text-align:center;
 .hero-text p {
     color: white;
 }
+.hero-intro {
+    color: white !important;
+}
 
 
 /* FILIGRANE RÉSEAU — VERSION STABLE */
