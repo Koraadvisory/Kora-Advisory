@@ -375,6 +375,11 @@ text-decoration:none;
 
 /* FOOTER SUR FOND NOIR PREMIUM — VERSION FINALE */
 
+/* Correction overlay contact */
+.contact {
+    position: relative;
+}
+
 .footer {
     background: #0A0A0A; /* Noir profond */
     color: #FAF9F7; /* Ivory */
