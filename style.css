@@ -505,9 +505,10 @@ text-align:center;
 }
 
 }
-/* Phrase du header en blanc */
-.hero-text p {
-    color: white;
+.baseline {
+    color: var(--gold) !important;
+}
+
 }
 .hero-intro {
     color: white !important;
