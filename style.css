@@ -56,25 +56,49 @@ section { padding: 100px 10%; position: relative; }
     color: white;
 }
 
-/* INTERNATIONAL (CARTE DU MONDE) */
+/* --- SECTION INTERNATIONAL (CARTE DU MONDE) --- */
 .international {
-    background-image: url("images/cdm.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    min-height: 400px;
+    position: relative;
+    min-height: 500px; /* Force une hauteur minimum sur ordinateur */
+    background-color: #0c121c !important; /* Fond de secours sombre */
+    
+    /* ESSAYEZ CES DEUX LIGNES L'UNE APRÈS L'AUTRE SI ÇA NE MARCHE PAS */
+    background-image: url("images/cdm.jpg") !important; 
+    /* background-image: url("cdm.jpg") !important; */ 
+
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll; /* Changé de 'fixed' à 'scroll' pour tester la compatibilité */
+    
     display: flex;
     align-items: center;
-    color: white;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 10%;
+    color: white !important;
 }
+
+/* Le filtre sombre pour que le texte soit lisible */
 .international::before {
     content: "";
     position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5) !important;
+    z-index: 1;
 }
-.international * { position: relative; z-index: 1; }
-.international h2 { color: white; }
+
+/* Force le texte à être au-dessus du filtre */
+.international h2, 
+.international p, 
+.international div {
+    position: relative !important;
+    z-index: 2 !important;
+    color: #FFFFFF !important;
+}
 
 /* MANTRA */
 .mantra {
