@@ -48,20 +48,19 @@ position:relative;
 }
 
 
-/* HEADER MIS À JOUR */
+/* --- NOUVEAU HEADER ÉPURÉ --- */
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 8%; /* Réduit pour gagner de l'espace en hauteur */
-    background: white;
-    position: sticky; /* Reste en haut au scroll */
+    padding: 15px 5%; /* Réduit pour plus de finesse */
+    background: #FFFFFF;
+    position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-/* Structure du nouveau logo horizontal */
 .logo-container {
     display: flex;
     align-items: center;
@@ -70,36 +69,37 @@ position:relative;
 }
 
 .logo-icon {
-    height: 55px; /* Plus petit et élégant */
+    height: 45px; /* Taille optimale pour le web */
     width: auto;
 }
 
 .logo-text {
     display: flex;
     flex-direction: column;
-    border-left: 1px solid var(--gold);
-    padding-left: 15px;
-    line-height: 1.1;
+    border-left: 1px solid #E8D7A8; /* Ta variable --gold */
+    padding-left: 12px;
+    line-height: 1;
 }
 
 .brand-name {
     font-family: 'Playfair Display', serif;
     font-size: 20px;
     font-weight: 600;
-    color: var(--night);
-    letter-spacing: 1.5px;
+    color: #0A0A0A; /* Ta variable --night */
+    letter-spacing: 2px;
 }
 
 .brand-sub {
     font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    color: var(--gold);
+    font-size: 9px;
+    color: #E8D7A8;
     letter-spacing: 4px;
-    margin-top: 2px;
+    margin-top: 5px;
 }
 
-.nav a:hover{
-opacity:.6;
+/* Ajustement de la navigation pour éviter qu'elle ne colle au bord */
+.nav {
+    gap: 30px; /* Réduit pour plus d'élégance */
 }
 
 /* LANGUE */
