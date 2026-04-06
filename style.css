@@ -373,38 +373,66 @@ padding-bottom:4px;
 text-decoration:none;
 }
 
-/* FOOTER MINIMALISTE PREMIUM */
+/* FOOTER SUR FOND NOIR PREMIUM — VERSION FINALE */
 
 .footer {
-    padding: 50px 20px;
+    background: #0A0A0A; /* Noir profond */
+    color: #FAF9F7; /* Ivory */
+    padding: 70px 20px;
     text-align: center;
     border-top: 1px solid var(--gold);
-    background: white;
-    color: var(--night);
     font-family: 'Inter', sans-serif;
 }
 
-.footer-logo {
+/* Phrase institutionnelle */
+.footer-mission {
+    max-width: 750px;
+    margin: 0 auto 35px auto;
+    font-size: 15px;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+/* Logo centré */
+.footer-logo-container {
     display: flex;
     justify-content: center;
+    margin-bottom: 25px;
+}
+
+.footer .logo-container {
+    display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 12px;
+    text-decoration: none;
 }
 
-.footer-logo img {
-    width: 28px;
-    height: 28px;
-    object-fit: contain;
-    display: block;
+.footer .logo-icon {
+    height: 40px;
+    width: auto;
 }
 
-.footer-logo span {
-    font-size: 16px;
+.footer .logo-text {
+    border-left: 1px solid var(--gold);
+    padding-left: 12px;
+}
+
+.footer .brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
     font-weight: 600;
-    letter-spacing: 1px;
+    color: #FAF9F7;
+    letter-spacing: 1.5px;
 }
 
+.footer .brand-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 4px;
+}
+
+/* Contacts */
 .footer-info {
     font-size: 14px;
     opacity: 0.85;
@@ -416,11 +444,12 @@ text-decoration:none;
     display: block;
 }
 
-
+/* Copyright */
 .footer-copy {
     font-size: 13px;
     opacity: 0.6;
 }
+
 
 
 /* ANIMATIONS TEXTE */
