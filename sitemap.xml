@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://koraadvisory.co/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://koraadvisory.co/#about</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://koraadvisory.co/#positioning</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://koraadvisory.co/#services</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://koraadvisory.co/#approach</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://koraadvisory.co/#international</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://koraadvisory.co/#contact</loc>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
