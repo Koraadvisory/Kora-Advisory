@@ -470,41 +470,42 @@ to{
 opacity:1;
 transform:translateY(0);
 }
-}
+
 
 /* RESPONSIVE */
-
 @media(max-width:900px){
 
-section{
-padding:70px 8%;
-}
+    section{
+        padding:70px 8%;
+    }
 
-.hero::before{
-width:200px;
-height:200px;
-}
+    .hero::before{
+        width:200px;
+        height:200px;
+    }
 
-.hero::after{
-width:240px;
-height:240px;
-}
+    .hero::after{
+        width:240px;
+        height:240px;
+    }
 
-.nav{
-gap:20px;
-}
+    .nav{
+        gap:20px;
+    }
 
-.service-grid{
-grid-template-columns:1fr;
-}
+    .service-grid{
+        grid-template-columns:1fr;
+    }
 
-.footer-grid{
-grid-template-columns:1fr;
-gap:40px;
-text-align:center;
-}
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:40px;
+        text-align:center;
+    }
+}  /* ← fermeture du @media, très important */
 
-/* HERO — couleurs fixes */
+
+/* HERO — couleurs fixes (desktop + mobile) */
 .hero-intro {
     color: white !important;
 }
@@ -517,6 +518,7 @@ text-align:center;
 .baseline {
     color: var(--gold) !important;
 }
+
 
 /* FILIGRANE RÉSEAU — VERSION STABLE */
 body::before {
@@ -541,4 +543,5 @@ body::before {
         display: none;
     }
 }
+
 
