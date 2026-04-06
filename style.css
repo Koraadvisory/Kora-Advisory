@@ -408,8 +408,14 @@ text-decoration:none;
 .footer-info {
     font-size: 14px;
     opacity: 0.85;
-    margin-bottom: 6px;
+    margin-bottom: 15px;
+    line-height: 1.6;
 }
+
+.footer-info div {
+    display: block;
+}
+
 
 .footer-copy {
     font-size: 13px;
