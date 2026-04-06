@@ -1,59 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
 
 /* VARIABLES */
-
 :root {
---ivory:#FAF9F7;
---night:#0A0A0A;
---gold:#E8D7A8;
---gold-soft:#E8D7A8CC;
---deep-gray:#1A1A1A;
+    --ivory: #FAF9F7;
+    --night: #0A0A0A;
+    --gold: #E8D7A8;
+    --gold-soft: #E8D7A8CC;
+    --deep-gray: #1A1A1A;
 }
 
 /* BASE */
-
-body{
-margin:0;
-font-family:'Inter',sans-serif;
-background:var(--ivory);
-color:var(--night);
-line-height:1.7;
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--ivory);
+    color: var(--night);
+    line-height: 1.7;
+    overflow-x: hidden; /* Empêche le scroll horizontal sur mobile */
 }
 
-h1,h2,h3{
-font-family:'Playfair Display',serif;
-margin-bottom:20px;
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
 }
 
-h2::after{
-content:"";
-display:block;
-width:60px;
-height:2px;
-background:var(--gold);
-margin-top:10px;
+h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+    margin-top: 10px;
 }
 
-p{
-max-width:720px;
-margin-left:auto;
-margin-right:auto;
-font-size:17px;
-line-height:1.75;
+p {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 17px;
+    line-height: 1.75;
 }
 
-section{
-padding:100px 10%;
-position:relative;
+section {
+    padding: 100px 10%;
+    position: relative;
 }
 
-
-/* --- NOUVEAU HEADER ÉPURÉ --- */
+/* --- HEADER --- */
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 5%; /* Réduit pour plus de finesse */
+    padding: 15px 5%;
     background: #FFFFFF;
     position: sticky;
     top: 0;
@@ -69,14 +67,14 @@ position:relative;
 }
 
 .logo-icon {
-    height: 45px; /* Taille optimale pour le web */
+    height: 45px;
     width: auto;
 }
 
 .logo-text {
     display: flex;
     flex-direction: column;
-    border-left: 1px solid #E8D7A8; /* Ta variable --gold */
+    border-left: 1px solid var(--gold);
     padding-left: 12px;
     line-height: 1;
 }
@@ -85,296 +83,124 @@ position:relative;
     font-family: 'Playfair Display', serif;
     font-size: 20px;
     font-weight: 600;
-    color: #0A0A0A; /* Ta variable --night */
+    color: var(--night);
     letter-spacing: 2px;
 }
 
 .brand-sub {
     font-family: 'Inter', sans-serif;
     font-size: 9px;
-    color: #E8D7A8;
+    color: var(--gold);
     letter-spacing: 4px;
     margin-top: 5px;
 }
 
-/* Ajustement de la navigation pour éviter qu'elle ne colle au bord */
 .nav {
-    gap: 30px; /* Réduit pour plus d'élégance */
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-left: auto;
+    margin-right: 40px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #111;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 /* LANGUE */
-
-.language-switch{
-font-size:14px;
+.language-switch {
+    font-size: 14px;
+    white-space: nowrap;
 }
 
-.language-switch a{
-text-decoration:none;
-color:#111;
-margin-left:5px;
+.language-switch a {
+    text-decoration: none;
+    color: #111;
 }
 
-.language-switch a:first-child{
-color:#E8D7A8;
-font-weight:600;
+.language-switch a:first-child {
+    color: var(--gold);
+    font-weight: 600;
 }
 
 /* HERO */
-
-.hero{
-height:70vh;
-background:var(--night);
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-text-align:center;
-position:relative;
-padding-top:20px;
-overflow:hidden;
+.hero {
+    height: 70vh;
+    background: var(--night);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 20px 10%;
+    overflow: hidden;
 }
 
-/* KORA GAUCHE PRINCIPALE */
-
-.hero::before{
-content:"";
-position:absolute;
-left:4%;
-top:50%;
-transform:translateY(-50%);
-width:360px;
-height:360px;
-background-image:url("images/kora3.jpg");
-background-size:contain;
-background-repeat:no-repeat;
-opacity:.9;
-animation:koraFloat 6s ease-in-out infinite;
+.hero::before {
+    content: "";
+    position: absolute;
+    left: 4%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 300px;
+    background-image: url("images/kora3.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: .7;
+    animation: koraFloat 6s ease-in-out infinite;
 }
 
-/* HALO DORE */
+.hero-text { position: relative; z-index: 2; }
+.hero-text h1 { font-size: 2.2rem; color: white; max-width: 900px; }
+.hero-middle { color: white; font-size: 1.4rem; margin: 25px 0; font-weight: 400; }
+.baseline { font-size: 1.3rem; color: var(--gold); margin-top: 18px; }
 
-.hero::after{
-content:"";
-position:absolute;
-left:6%;
-top:50%;
-transform:translateY(-50%);
-width:420px;
-height:420px;
-background:radial-gradient(circle,var(--gold-soft),transparent 70%);
-opacity:.35;
-filter:blur(25px);
+@keyframes koraFloat {
+    0%, 100% { transform: translateY(-50%) translateY(0px); }
+    50% { transform: translateY(-50%) translateY(-15px); }
 }
 
-.hero-text{
-position:relative;
-z-index:2;
+/* SECTIONS */
+.about { background: white; }
+
+.positioning::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("images/network.jpg");
+    background-size: cover;
+    opacity: .1;
+    z-index: 0;
 }
 
-.hero-text h1{
-font-size:2rem;
-color:white;
-max-width:900px;
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
 }
 
-.hero-middle{
-color:white;
-font-size:1.4rem;
-margin:25px 0;
-font-weight:400;
-letter-spacing:.5px;
+.service {
+    background: white;
+    padding: 40px;
+    border: 1px solid rgba(0,0,0,0.06);
+    transition: 0.3s;
 }
 
-.baseline{
-font-size:1.3rem;
-color:var(--gold);
-margin-top:18px;
-}
+.service:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
 
-/* ANIMATION KORA */
+/* MANTRA & INTERNATIONAL */
+.mantra { text-align: center; background: var(--night); padding: 80px 10%; border-top: 1px solid var(--gold); }
+.mantra h2 { color: var(--gold); font-size: 1.8rem; }
 
-@keyframes koraFloat{
-
-0%{
-transform:translateY(-50%) translateY(0px);
-}
-
-50%{
-transform:translateY(-50%) translateY(-10px);
-}
-
-100%{
-transform:translateY(-50%) translateY(0px);
-}
-
-}
-
-/* ABOUT */
-
-.about{
-background:white;
-}
-
-/* POSITIONING */
-
-.positioning::before{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(255,255,255,0.9);
-}
-
-.positioning::after{
-content:"";
-position:absolute;
-inset:0;
-background-image:url("images/network.jpg");
-background-size:cover;
-background-position:center;
-opacity:.25;
-}
-
-.positioning *{
-position:relative;
-}
-
-.positioning ul{
-margin-top:20px;
-padding-left:20px;
-}
-
-.positioning li{
-margin-bottom:10px;
-}
-
-/* SERVICES */
-
-.services{
-background:white;
-}
-
-.service-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:40px;
-margin-top:50px;
-}
-
-.service{
-background:white;
-padding:40px;
-border-radius:8px;
-border:1px solid rgba(0,0,0,0.06);
-transition:all .35s ease;
-position:relative;
-overflow:hidden;
-}
-
-.service::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:4px;
-height:100%;
-background:var(--gold);
-opacity:.6;
-}
-
-.service:hover{
-transform:translateY(-8px);
-box-shadow:0 25px 60px rgba(0,0,0,0.08);
-}
-
-/* INTERNATIONAL */
-
-.international{
-background-image:url("images/cdm.jpg");
-background-size:cover;
-background-position:center;
-padding-top:120px;
-padding-bottom:120px;
-}
-
-.international::before{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,.2);
-}
-
-.international h2,
-.international p{
-color:white;
-font-weight:500;
-}
-
-.international *{
-position:relative;
-}
-
-/* MANTRA */
-
-.mantra{
-text-align:center;
-background:var(--night);
-padding:90px 10%;
-border-top:1px solid var(--gold);
-}
-
-.mantra h2{
-color:var(--gold);
-font-size:2rem;
-margin:0;
-}
-
-.mantra h2::after{
-display:none;
-}
-
-/* CONTACT (CONSTRUISONS ENSEMBLE) */
-
-.contact{
-text-align:center;
-background-image:url("images/achieve.jpg");
-background-size:cover;
-background-position:center;
-padding:120px 10%;
-border-top:1px solid var(--gold);
-}
-
-.contact::before{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(250,249,247,0.9);
-}
-
-.contact *{
-position:relative;
-}
-
-.contact h2{
-font-size:2rem;
-margin-bottom:20px;
-}
-
-.contact p{
-font-size:1.2rem;
-opacity:.85;
-}
-
-.contact a{
-color:var(--night);
-font-weight:600;
-border-bottom:1px solid var(--gold);
-padding-bottom:4px;
-text-decoration:none;
-}
-
-/* FOOTER NOIR ET LOGO LUMINEUX */
+/* FOOTER */
 .footer {
-    background-color: #000000 !important; /* Force le noir profond */
+    background-color: #000000 !important;
     color: #FFFFFF;
     padding: 80px 8% 40px 8%;
 }
@@ -383,164 +209,19 @@ text-decoration:none;
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr;
     gap: 60px;
-    align-items: start;
 }
 
-/* Style spécifique pour le logo sur fond noir */
-.footer-variant .brand-name {
-    color: #FFFFFF !important; /* KORA en blanc pour ressortir du noir */
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    letter-spacing: 2px;
-}
+.footer-variant .brand-name { color: #FFFFFF !important; }
+.footer-variant .brand-sub { color: var(--gold); }
+.footer-variant .logo-text { border-left: 1px solid var(--gold); }
 
-.footer-variant .brand-sub {
-    color: #E8D7A8; /* ADVISORY reste en doré */
-    font-size: 10px;
-    letter-spacing: 5px;
-}
+.footer h4 { color: var(--gold); margin-bottom: 20px; text-transform: uppercase; font-size: 14px; }
+.footer a { color: #ccc; text-decoration: none; display: block; margin-bottom: 10px; }
 
-.footer-variant .logo-text {
-    border-left: 1px solid rgba(232, 215, 168, 0.5); /* Ligne dorée subtile */
-    padding-left: 15px;
-}
-
-/* Texte de description dans le footer */
-.footer p {
-    color: #BBBBBB;
-    font-size: 15px;
-    line-height: 1.6;
-    margin-top: 20px;
-}
-
-/* Titres des colonnes footer */
-.footer h4 {
-    color: #E8D7A8;
-    text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 2px;
-    margin-bottom: 25px;
-}
-
-/* ANIMATIONS TEXTE */
-
-.dynamic-text{
-opacity:0;
-transform:translateY(20px);
-animation:fadeUp 1s ease forwards;
-}
-
-@keyframes fadeUp{
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-/* --- ADAPTATION MOBILE (RESPONSIVE) --- */
-
+/* RESPONSIVE */
 @media (max-width: 900px) {
-    
-    /* 1. Header & Navigation */
-    .header {
-        flex-direction: column; /* Aligne le logo et le menu l'un sur l'autre */
-        padding: 15px 5%;
-        gap: 15px;
-    }
-
-    .nav {
-        margin: 0 auto;
-        gap: 15px; /* Espace réduit entre les liens */
-        flex-wrap: wrap; /* Permet aux liens de passer à la ligne si besoin */
-        justify-content: center;
-    }
-
-    .nav a {
-        font-size: 14px;
-    }
-
-    .language-switch {
-        margin-top: 10px;
-    }
-
-    /* 2. Hero Section (Texte principal) */
-    .hero {
-        height: auto;
-        padding: 80px 5%;
-    }
-
-    .hero-text h1 {
-        font-size: 1.6rem; /* Texte plus petit pour mobile */
-        line-height: 1.3;
-    }
-
-    /* 3. L'image Kora à gauche (Celle qui flotte) */
-    .hero::before {
-        position: relative; /* Elle ne flotte plus par-dessus le texte */
-        left: 0;
-        top: 0;
-        transform: none;
-        width: 150px;
-        height: 150px;
-        margin-bottom: 20px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        animation: none; /* On coupe l'animation pour économiser la batterie */
-    }
-
-    /* 4. Grilles de Services & Approche */
-    .service-grid, .approach-grid {
-        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-        gap: 20px;
-    }
-
-    /* 5. Footer */
-    .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 40px;
-    }
-
-    .logo-container.footer-variant {
-        justify-content: center; /* Centre le logo dans le footer */
-    }
-
-    .footer-logo-container {
-        margin: 0 auto 20px auto;
-    }
-}
-
-/* --- OPTIMISATION POUR TRÈS PETITS ÉCRANS (IPHONE SE, ETC.) --- */
-@media (max-width: 480px) {
-    .brand-name {
-        font-size: 18px;
-    }
-    
-    .brand-sub {
-        font-size: 8px;
-        letter-spacing: 3px;
-    }
-    
-    .logo-icon {
-        height: 40px;
-    }
-
-}
-
-/* FILIGRANE RÉSEAU */
-body::before {
-    content: "";
-    position: fixed;
-    top: 15%;
-    right: -10%;
-    width: 50%;
-    height: 70%;
-    background-image: url("images/network.jpg"); /* Utilisation de ton image existante */
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.04; /* Très subtil sur le fond Ivory */
-    pointer-events: none;
-    z-index: -1;
-    filter: grayscale(100%);
-}
+    .header { flex-direction: column; gap: 20px; text-align: center; }
+    .nav { margin: 0; gap: 15px; flex-wrap: wrap; justify-content: center; }
+    .hero::before { display: none; } /* On cache l'image flottante sur mobile pour la clarté */
+    .hero-text h1 { font-size: 1.7rem; }
+    .service-grid { grid-template-columns: 1fr; }
