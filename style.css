@@ -372,23 +372,54 @@ padding-bottom:4px;
 text-decoration:none;
 }
 
-/* FOOTER */
-
-/* Adaptation du logo pour le fond noir du footer */
-.footer-variant .brand-name {
-    color: #FFFFFF; /* Texte KORA en blanc */
+/* FOOTER NOIR ET LOGO LUMINEUX */
+.footer {
+    background-color: #000000 !important; /* Force le noir profond */
+    color: #FFFFFF;
+    padding: 80px 8% 40px 8%;
 }
 
-.footer-variant .logo-text {
-    border-left: 1px solid var(--gold); /* Garde la ligne dorée */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* Style spécifique pour le logo sur fond noir */
+.footer-variant .brand-name {
+    color: #FFFFFF !important; /* KORA en blanc pour ressortir du noir */
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    letter-spacing: 2px;
 }
 
 .footer-variant .brand-sub {
-    color: var(--gold); /* Garde ADVISORY en doré */
+    color: #E8D7A8; /* ADVISORY reste en doré */
+    font-size: 10px;
+    letter-spacing: 5px;
 }
 
-.footer-logo-container {
-    margin-bottom: 25px; /* Espace avec le texte en dessous */
+.footer-variant .logo-text {
+    border-left: 1px solid rgba(232, 215, 168, 0.5); /* Ligne dorée subtile */
+    padding-left: 15px;
+}
+
+/* Texte de description dans le footer */
+.footer p {
+    color: #BBBBBB;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+/* Titres des colonnes footer */
+.footer h4 {
+    color: #E8D7A8;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
 }
 
 /* ANIMATIONS TEXTE */
