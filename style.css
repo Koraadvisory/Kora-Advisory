@@ -1,150 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap');
 
-/* --- CONFIGURATION GLOBALE --- */
-:root {
-    --ivory: #FAF9F7;
-    --night: #0A0A0A;
-    --gold: #E8D7A8;
+:root { --ivory: #FAF9F7; --night: #0A0A0A; --gold: #E8D7A8; }
+
+* { box-sizing: border-box; }
+body { margin: 0; font-family: 'Inter', sans-serif; background: var(--ivory); color: var(--night); }
+
+/* HEADER */
+.header { 
+    display: flex; justify-content: space-between; align-items: center; 
+    padding: 15px 5%; background: white; position: sticky; top: 0; z-index: 1000;
 }
+.logo-container { display: flex; align-items: center; text-decoration: none; gap: 12px; }
+.logo-icon { height: 45px; width: auto; display: block; }
+.logo-text { border-left: 1px solid var(--gold); padding-left: 12px; display: flex; flex-direction: column; }
+.brand-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; color: var(--night); letter-spacing: 2px; }
+.brand-sub { font-size: 9px; color: var(--gold); letter-spacing: 3px; }
 
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background-color: var(--ivory);
-    color: var(--night);
-    overflow-x: hidden;
+.nav { display: flex; gap: 20px; }
+.nav a { text-decoration: none; color: var(--night); font-size: 14px; font-weight: 500; }
+
+/* HERO & KORA IMAGE */
+.hero { 
+    height: 70vh; background: var(--night); display: flex; align-items: center; 
+    justify-content: center; position: relative; color: white; text-align: center;
 }
-
-/* --- HEADER --- */
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 5%;
-    background: #FFFFFF !important;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    gap: 15px;
-}
-
-.logo-icon {
-    height: 50px;
-    width: auto;
-    display: block;
-}
-
-.logo-text {
-    display: flex;
-    flex-direction: column;
-    border-left: 1px solid var(--gold);
-    padding-left: 12px;
-    line-height: 1.1;
-}
-
-.brand-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 21px;
-    font-weight: 600;
-    color: var(--night);
-    letter-spacing: 2px;
-}
-
-.brand-sub {
-    font-family: 'Inter', sans-serif;
-    font-size: 9px;
-    color: var(--gold);
-    letter-spacing: 4px;
-    margin-top: 3px;
-}
-
-.nav { display: flex; gap: 30px; margin-left: auto; margin-right: 30px; }
-.nav a { text-decoration: none; color: var(--night); font-weight: 500; }
-
-/* --- HERO & KORA FLOTTANTE --- */
-.hero {
-    height: 75vh;
-    background: var(--night);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-}
-
 .hero::before {
-    content: "";
-    position: absolute;
-    left: 4%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 360px;
-    height: 360px;
-    background-image: url("images/kora3.jpg"); /* Image Kora */
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.9;
-    z-index: 1;
-    animation: koraFloat 6s ease-in-out infinite;
+    content: ""; position: absolute; left: 5%; width: 300px; height: 300px;
+    background: url("images/kora3.jpg") no-repeat center/contain; opacity: 0.8;
 }
 
-@keyframes koraFloat {
-    0%, 100% { transform: translateY(-50%) translateY(0px); }
-    50% { transform: translateY(-50%) translateY(-15px); }
-}
-
-.hero-text { position: relative; z-index: 2; text-align: center; color: white; }
-
-/* --- INTERNATIONAL (CARTE DU MONDE) --- */
+/* CARTE DU MONDE */
 .international {
-    position: relative;
-    background-color: #0c121c;
-    background-image: url("images/cdm.jpg");
-    background-size: cover;
-    background-position: center;
-    padding: 120px 10%;
-    color: white;
-    text-align: center;
+    padding: 100px 10%; text-align: center; color: white; position: relative;
+    background: url("images/cdm.jpg") no-repeat center/cover;
 }
+.international::before { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.6); }
+.international * { position: relative; z-index: 1; }
 
-.international::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
+/* GRILLES */
+section { padding: 80px 10%; }
+.service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+.service { padding: 30px; border: 1px solid #eee; background: white; }
 
-.international * { position: relative; z-index: 2; }
+/* FOOTER */
+.footer { background: #000; color: white; padding: 60px 10%; }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 50px; }
+.footer-variant .brand-name { color: white; }
+.footer-grid h4 { color: var(--gold); margin-bottom: 20px; }
+.footer-grid a { color: #ccc; text-decoration: none; display: block; margin-bottom: 10px; }
 
-/* --- FOOTER --- */
-.footer {
-    background-color: #000000 !important;
-    color: #FFFFFF;
-    padding: 80px 8% 40px 8%;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
-    gap: 60px;
-}
-
-/* Inversion des couleurs du logo pour le fond noir du footer */
-.footer .brand-name { color: #FFFFFF !important; }
-
-/* --- RESPONSIVE --- */
+/* MOBILE */
 @media (max-width: 900px) {
-    .header { flex-direction: column; gap: 20px; }
-    .nav { margin: 0; gap: 15px; flex-wrap: wrap; justify-content: center; }
-    .hero::before { width: 200px; height: 200px; left: 50%; top: 20%; transform: translateX(-50%); }
-    .footer-grid { grid-template-columns: 1fr; text-align: center; }
-    .logo-container { justify-content: center; }
+    .header { flex-direction: column; gap: 15px; }
+    .hero::before { display: none; }
+    .service-grid, .footer-grid { grid-template-columns: 1fr; }
 }
