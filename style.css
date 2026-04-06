@@ -505,8 +505,8 @@ text-align:center;
 }
 
 }
-/* Phrase ajoutée dans le header en blanc */
-.header h2 {
+/* Phrase du header en blanc */
+.hero-text p {
     color: white;
 }
 
