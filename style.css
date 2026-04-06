@@ -406,37 +406,94 @@ transform:translateY(0);
 }
 }
 
-/* RESPONSIVE */
+/* --- ADAPTATION MOBILE (RESPONSIVE) --- */
 
-@media(max-width:900px){
+@media (max-width: 900px) {
+    
+    /* 1. Header & Navigation */
+    .header {
+        flex-direction: column; /* Aligne le logo et le menu l'un sur l'autre */
+        padding: 15px 5%;
+        gap: 15px;
+    }
 
-section{
-padding:70px 8%;
+    .nav {
+        margin: 0 auto;
+        gap: 15px; /* Espace réduit entre les liens */
+        flex-wrap: wrap; /* Permet aux liens de passer à la ligne si besoin */
+        justify-content: center;
+    }
+
+    .nav a {
+        font-size: 14px;
+    }
+
+    .language-switch {
+        margin-top: 10px;
+    }
+
+    /* 2. Hero Section (Texte principal) */
+    .hero {
+        height: auto;
+        padding: 80px 5%;
+    }
+
+    .hero-text h1 {
+        font-size: 1.6rem; /* Texte plus petit pour mobile */
+        line-height: 1.3;
+    }
+
+    /* 3. L'image Kora à gauche (Celle qui flotte) */
+    .hero::before {
+        position: relative; /* Elle ne flotte plus par-dessus le texte */
+        left: 0;
+        top: 0;
+        transform: none;
+        width: 150px;
+        height: 150px;
+        margin-bottom: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        animation: none; /* On coupe l'animation pour économiser la batterie */
+    }
+
+    /* 4. Grilles de Services & Approche */
+    .service-grid, .approach-grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+        gap: 20px;
+    }
+
+    /* 5. Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .logo-container.footer-variant {
+        justify-content: center; /* Centre le logo dans le footer */
+    }
+
+    .footer-logo-container {
+        margin: 0 auto 20px auto;
+    }
 }
 
-.hero::before{
-width:200px;
-height:200px;
-}
-
-.hero::after{
-width:240px;
-height:240px;
-}
-
-.nav{
-gap:20px;
-}
-
-.service-grid{
-grid-template-columns:1fr;
-}
-
-.footer-grid{
-grid-template-columns:1fr;
-gap:40px;
-text-align:center;
-}
+/* --- OPTIMISATION POUR TRÈS PETITS ÉCRANS (IPHONE SE, ETC.) --- */
+@media (max-width: 480px) {
+    .brand-name {
+        font-size: 18px;
+    }
+    
+    .brand-sub {
+        font-size: 8px;
+        letter-spacing: 3px;
+    }
+    
+    .logo-icon {
+        height: 40px;
+    }
 
 }
 
