@@ -6,7 +6,6 @@
     --night: #0A0A0A;
     --gold: #E8D7A8;
     --gold-soft: #E8D7A8CC;
-    --deep-gray: #1A1A1A;
 }
 
 /* BASE */
@@ -16,37 +15,15 @@ body {
     background: var(--ivory);
     color: var(--night);
     line-height: 1.7;
-    overflow-x: hidden; /* Empêche le scroll horizontal sur mobile */
+    overflow-x: hidden;
 }
 
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 20px;
-}
+h1, h2, h3 { font-family: 'Playfair Display', serif; margin-bottom: 20px; }
+h2::after { content: ""; display: block; width: 60px; height: 2px; background: var(--gold); margin-top: 10px; }
 
-h2::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 2px;
-    background: var(--gold);
-    margin-top: 10px;
-}
+section { padding: 100px 10%; position: relative; }
 
-p {
-    max-width: 720px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 17px;
-    line-height: 1.75;
-}
-
-section {
-    padding: 100px 10%;
-    position: relative;
-}
-
-/* --- HEADER --- */
+/* HEADER */
 .header {
     display: flex;
     align-items: center;
@@ -59,150 +36,60 @@ section {
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-.logo-container {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    gap: 15px;
-}
+.logo-container { display: flex; align-items: center; text-decoration: none; gap: 15px; }
+.logo-icon { height: 48px; width: auto; }
+.logo-text { display: flex; flex-direction: column; border-left: 1px solid var(--gold); padding-left: 12px; line-height: 1.1; }
+.brand-name { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 600; color: var(--night); letter-spacing: 2px; }
+.brand-sub { font-family: 'Inter', sans-serif; font-size: 9px; color: var(--gold); letter-spacing: 4px; margin-top: 3px; }
 
-.logo-icon {
-    height: 45px;
-    width: auto;
-}
-
-.logo-text {
-    display: flex;
-    flex-direction: column;
-    border-left: 1px solid var(--gold);
-    padding-left: 12px;
-    line-height: 1;
-}
-
-.brand-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--night);
-    letter-spacing: 2px;
-}
-
-.brand-sub {
-    font-family: 'Inter', sans-serif;
-    font-size: 9px;
-    color: var(--gold);
-    letter-spacing: 4px;
-    margin-top: 5px;
-}
-
-.nav {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    margin-left: auto;
-    margin-right: 40px;
-}
-
-.nav a {
-    text-decoration: none;
-    color: #111;
-    font-size: 16px;
-    font-weight: 500;
-}
-
-/* LANGUE */
-.language-switch {
-    font-size: 14px;
-    white-space: nowrap;
-}
-
-.language-switch a {
-    text-decoration: none;
-    color: #111;
-}
-
-.language-switch a:first-child {
-    color: var(--gold);
-    font-weight: 600;
-}
+.nav { display: flex; gap: 30px; margin-left: auto; margin-right: 30px; }
+.nav a { text-decoration: none; color: var(--night); font-weight: 500; }
 
 /* HERO */
 .hero {
-    height: 70vh;
+    height: 75vh;
     background: var(--night);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    position: relative;
-    padding: 20px 10%;
-    overflow: hidden;
+    color: white;
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    left: 4%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 300px;
-    height: 300px;
-    background-image: url("images/kora3.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: .7;
-    animation: koraFloat 6s ease-in-out infinite;
+/* INTERNATIONAL (CARTE DU MONDE) */
+.international {
+    background-image: url("images/cdm.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    color: white;
 }
-
-.hero-text { position: relative; z-index: 2; }
-.hero-text h1 { font-size: 2.2rem; color: white; max-width: 900px; }
-.hero-middle { color: white; font-size: 1.4rem; margin: 25px 0; font-weight: 400; }
-.baseline { font-size: 1.3rem; color: var(--gold); margin-top: 18px; }
-
-@keyframes koraFloat {
-    0%, 100% { transform: translateY(-50%) translateY(0px); }
-    50% { transform: translateY(-50%) translateY(-15px); }
-}
-
-/* SECTIONS */
-.about { background: white; }
-
-.positioning::after {
+.international::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("images/network.jpg");
-    background-size: cover;
-    opacity: .1;
-    z-index: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+.international * { position: relative; z-index: 1; }
+.international h2 { color: white; }
+
+/* MANTRA */
+.mantra {
+    background: var(--night);
+    color: var(--gold);
+    text-align: center;
+    padding: 80px 10%;
 }
 
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.service {
-    background: white;
-    padding: 40px;
-    border: 1px solid rgba(0,0,0,0.06);
-    transition: 0.3s;
-}
-
-.service:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-
-/* MANTRA & INTERNATIONAL */
-.mantra { text-align: center; background: var(--night); padding: 80px 10%; border-top: 1px solid var(--gold); }
-.mantra h2 { color: var(--gold); font-size: 1.8rem; }
-
-/* FOOTER */
+/* FOOTER NOIR */
 .footer {
-    background-color: #000000 !important;
+    background: #000000 !important;
     color: #FFFFFF;
     padding: 80px 8% 40px 8%;
+    border-top: 1px solid rgba(232, 215, 168, 0.1);
 }
 
 .footer-grid {
@@ -212,16 +99,13 @@ section {
 }
 
 .footer-variant .brand-name { color: #FFFFFF !important; }
-.footer-variant .brand-sub { color: var(--gold); }
-.footer-variant .logo-text { border-left: 1px solid var(--gold); }
-
 .footer h4 { color: var(--gold); margin-bottom: 20px; text-transform: uppercase; font-size: 14px; }
-.footer a { color: #ccc; text-decoration: none; display: block; margin-bottom: 10px; }
+.footer a { color: #BBB; text-decoration: none; display: block; margin-bottom: 10px; }
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-    .header { flex-direction: column; gap: 20px; text-align: center; }
+    .header { flex-direction: column; gap: 20px; }
     .nav { margin: 0; gap: 15px; flex-wrap: wrap; justify-content: center; }
-    .hero::before { display: none; } /* On cache l'image flottante sur mobile pour la clarté */
-    .hero-text h1 { font-size: 1.7rem; }
-    .service-grid { grid-template-columns: 1fr; }
+    .service-grid, .footer-grid { grid-template-columns: 1fr; text-align: center; }
+    .logo-container { justify-content: center; }
+}
