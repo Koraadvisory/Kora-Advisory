@@ -506,19 +506,27 @@ text-align:center;
 
 }
 
-/* FILIGRANE RÉSEAU */
+/* FILIGRANE RÉSEAU — VERSION STABLE */
 body::before {
     content: "";
     position: fixed;
-    top: 15%;
-    right: -10%;
-    width: 50%;
-    height: 70%;
-    background-image: url("images/network.jpg"); /* Utilisation de ton image existante */
+    top: 20%;
+    right: 0;
+    width: 28%;
+    height: 50%;
+    background-image: url("images/network.jpg");
     background-size: contain;
     background-repeat: no-repeat;
-    opacity: 0.04; /* Très subtil sur le fond Ivory */
+    opacity: 0.04;
     pointer-events: none;
     z-index: -1;
     filter: grayscale(100%);
 }
+
+/* Désactivation sur tablettes et mobiles */
+@media(max-width: 1200px) {
+    body::before {
+        display: none;
+    }
+}
+
