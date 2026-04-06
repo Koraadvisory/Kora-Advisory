@@ -504,13 +504,16 @@ gap:40px;
 text-align:center;
 }
 
-
 .hero-intro {
     color: white !important;
 }
 
 .baseline {
     color: var(--gold) !important;
+}
+.hero-intro.dynamic-text,
+.hero-intro.dynamic-text.show {
+    color: white !important;
 }
 
 
